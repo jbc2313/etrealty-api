@@ -1,0 +1,42 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Property {
+  PropertyId Int @id //QueryApi has this as a string. Will have to parse to int.
+  ApiUpdateAt String?
+  Tags String[]
+  PermLink String
+  Status String
+  ListDate String
+  Branding String
+  Photos String[]
+  ListPrice Int
+  YearBuilt Int
+  BathsFull Int
+  BathsHalf Int
+  Baths Int
+  LotSqft Int
+  Sqft Int
+  Garage Int
+  Stories Int
+  Beds Int
+  PropertyType String
+  ListingId String
+  PostalCode String
+  State String
+  Longitude Int
+  Latitude Int
+  City String
+  StateCode String
+  Address String  //Line in ApiQuery
+  County String
+}
