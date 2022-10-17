@@ -17,6 +17,10 @@ export const getPropertys = async () => {
     const apiProps = data.data.home_search.results // array of propertys
     console.log("props =>", apiProps)
     console.log("Total Props", totalApiProperty)
+    return {
+        totalApiProperty,
+        apiProps
+    }
 
 }
 

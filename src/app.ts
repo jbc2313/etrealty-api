@@ -1,7 +1,8 @@
 import express, { Express, Request, Response, NextFunction } from 'express';
 import dotenv from 'dotenv';
-import { runTest } from './testFetch';
-
+import { runTest } from './__tests__/testFetch';
+import { runFeed } from './__tests__/testDbCrud';
+import { findProperty } from './dbUtils/findSingleModel';
 dotenv.config()
 
 const app: Express = express()
@@ -16,8 +17,16 @@ app.get('/', (req: Request, res: Response, next: NextFunction) => {
 });
 
 app.get('/test', (req: Request, res: Response, next: NextFunction) => {
-    runTest();
-    res.json({ message: "Test was ran, check server"})
+    // this tests fetch of props
+    //runTest();
+    //this tests feeding db with props
+    runFeed();
+    res.json({ msg: "check server for results"})
+    // const test = async () => {
+    //     const result = await findProperty(298274896)
+    //     res.json({ message: result})
+    // }
+    // test()
 });
 
 app.listen(port, () => {
