@@ -28,6 +28,9 @@ export const feed = () => {
                     createProperty(prop)
                 }else{
                     console.log("property already in db")
+                    // TODO
+                    // need to check last updated date in db with newly fetched property.
+                    // if changed need to update that property in db
                 }
             })
         })
