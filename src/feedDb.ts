@@ -15,20 +15,6 @@ let props
 let totProps
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 export const feed = () => {
     getPropertys()
     .then(data => {
