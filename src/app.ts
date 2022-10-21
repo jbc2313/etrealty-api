@@ -20,8 +20,11 @@ app.get('/test', (req: Request, res: Response, next: NextFunction) => {
     // this tests fetch of props
     //runTest();
     //this tests feeding db with props
-    runFeed();
+    runTest();
+    // runFeed();
     res.json({ msg: "check server for results"})
+    
+    // this will return a single property from prisma
     // const test = async () => {
     //     const result = await findProperty(298274896)
     //     res.json({ message: result})

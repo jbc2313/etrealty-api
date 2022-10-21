@@ -1,6 +1,6 @@
 import prisma from "./prismaClient";
 
-
+// p must be the PropertyId
 export const findProperty = async (p: any) => {
     
     const result = await prisma.property.findFirst({

@@ -1,8 +1,6 @@
 import prisma from "./prismaClient"
 
 
-
- 
 export const createProperty = (p: any) => {
 //these 2 function deal with Prisma Model not allowing null in these 2 rows
     const pPhotos = p.photos.map((p: any) => {

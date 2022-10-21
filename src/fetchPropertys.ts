@@ -10,6 +10,9 @@ const options = {
     }
 };
 
+
+// this returns all propertys in the 64720 area, will eventually branch out to 20, then 50 miles north, south east and west
+
 export const getPropertys = async () => { 
     const { data } = await axios.request(options)
 //    console.log(data.data.home_search)
