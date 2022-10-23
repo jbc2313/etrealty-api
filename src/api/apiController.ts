@@ -1,5 +1,5 @@
 import { Request, Response } from 'express'
-
+import prisma from '../dbUtils/prismaClient'
 
 export const getAllProperty = (req: Request, res: Response) => {
     console.log('getAllProperty Route Pinged.')
