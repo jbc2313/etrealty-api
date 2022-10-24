@@ -1,4 +1,4 @@
-import { getPropertys } from "../fetchPropertys";
+import { getPropertys } from "../utils/fetchPropertys";
 
 export const runTest = () => {
     getPropertys()

@@ -1,6 +1,6 @@
 import { getPropertys } from "./fetchPropertys";
-import { createProperty } from "./dbUtils/createSingleModel";
-import { findProperty } from "./dbUtils/findSingleModel";
+import { createProperty } from "../dbUtils/createSingleModel";
+import { findProperty } from "../dbUtils/findSingleModel";
 
 //this needs to be a cron job that runs 2 or 3 times a day.
 //needs to pull in propertys, check in the db to see if

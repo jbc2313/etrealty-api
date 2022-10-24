@@ -1,4 +1,4 @@
-import { feed } from '../feedDb';
+import { feed } from '../utils/feedDb';
 
 export const runFeed = () => {
     feed()
