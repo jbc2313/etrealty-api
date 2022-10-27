@@ -17,3 +17,9 @@ export const getSingleProperty = (req: Request, res: Response) => {
     //})
     res.json({msg: "SINGLE HOUSE ROUTE"})
 }
+
+
+
+
+
+
