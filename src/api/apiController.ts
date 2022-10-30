@@ -4,7 +4,10 @@ import { findProperty } from '../dbUtils/findSingleModel'
 
 export const getAllProperty = (req: Request, res: Response) => {
     console.log('getAllProperty Route Pinged.')
-    res.json({msg: "ALL HOUSES ROUTE"})
+    prisma.property.findMany()
+    .then(props => {
+        res.json({msg: "All Properties returned", properties: props})
+    })
 }
 
 export const getSingleProperty = (req: Request, res: Response) => {

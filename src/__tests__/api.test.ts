@@ -9,13 +9,14 @@ beforeAll(() => {
 
 jest.mock('express')
 
-let mockedRequest: jest.Mocked<typeof Request> = {
-};
+// let mockedRequest: jest.Mocked<typeof Request> = {
+//
+// };
 
 
 
 describe('call mocked request and inspect it.', () => {
     test(('look at mocked request'), () => {
-        expect(mockedRequest).toBeCalled
+        // expect(mockedRequest).toBeCalled
     })
 })
