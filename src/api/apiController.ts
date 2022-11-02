@@ -21,8 +21,13 @@ export const getSingleProperty = (req: Request, res: Response) => {
     res.json({msg: "SINGLE HOUSE ROUTE"})
 }
 
-
-
+export const getTotalProperty = (req: Request, res: Response) => {
+    console.log('getTotalProperty route pinged.')
+    prisma.property.count()
+    .then(tot => {
+        res.json({ msg: "Total number of properties returned", total: tot })
+    })
+}
 
 
 
