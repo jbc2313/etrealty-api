@@ -3,14 +3,11 @@ import * as apiController from './apiController'
 const router: Router = express.Router()
 
 
-router.get('/api', apiController.getAllProperty)
+router.get('/api/all', apiController.getAllProperty)
 
-router.get('/api/:id', apiController.getSingleProperty)
+router.get('/api/total', apiController.getTotalProperty)
 
-
-
-
-
+router.get('/api/property/:id', apiController.getSingleProperty)
 
 
 
