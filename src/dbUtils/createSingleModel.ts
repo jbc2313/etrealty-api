@@ -15,6 +15,8 @@ export const createProperty = (p: any) => {
         }
         return t
     })
+
+
 //create the propertys
     prisma.property.create({
         data: {
