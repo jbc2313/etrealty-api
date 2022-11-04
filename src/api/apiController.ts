@@ -12,13 +12,23 @@ export const getAllProperty = (req: Request, res: Response) => {
 
 export const getSingleProperty = (req: Request, res: Response) => {
     console.log('getSingleProperty Route Pinged.')
-    console.log(req.body)
+    console.log(req.params.id)
+    prisma.property.findFirst({
+        where: {
+            PropertyId: {
+                equals: req.params.id
+            }
+        }
+    })
+    .then(prop => {
+        res.json({ msg: "Single House Returned", property: prop })
+    })
     //const query = req.body.propId
     //findProperty(query)
     //.then(res => {
 
     //})
-    res.json({msg: "SINGLE HOUSE ROUTE"})
+    // res.json({msg: "SINGLE HOUSE ROUTE"})
 }
 
 export const getTotalProperty = (req: Request, res: Response) => {
