@@ -22,9 +22,9 @@ app.get('/test', (req: Request, res: Response, next: NextFunction) => {
     //runTest();
     //this tests feeding db with props
     //runTest();
-    //runFeed(); // this actually adds property's to db
+    runFeed(); // this actually adds property's to db
     
-    testData() // test api returned data 
+   // testData() // test api returned data 
 
     res.json({ msg: "check server for results"})
     
