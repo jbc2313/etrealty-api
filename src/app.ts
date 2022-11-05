@@ -2,7 +2,7 @@ import express, { Express, Request, Response, NextFunction } from 'express';
 import dotenv from 'dotenv';
 import { runTest } from './__tests__/testFetch';
 import { runFeed } from './__tests__/testDbCrud';
-import { findProperty } from './dbUtils/findSingleModel';
+import { testData } from './__tests__/testApiDataReturn';
 import apiRoutes from './api/apiRoutes'
 dotenv.config()
 
@@ -22,7 +22,10 @@ app.get('/test', (req: Request, res: Response, next: NextFunction) => {
     //runTest();
     //this tests feeding db with props
     //runTest();
-    runFeed(); // this actually adds property's to db
+    //runFeed(); // this actually adds property's to db
+    
+    testData() // test api returned data 
+
     res.json({ msg: "check server for results"})
     
     // this will return a single property from prisma
