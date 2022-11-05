@@ -1,4 +1,4 @@
-export function checkProp(prop: any) {
+export async function checkProp(prop: any) {
     const p = prop
     // console.log("arg passed in funcion", prop)
     // used for testing

@@ -3,7 +3,7 @@ import axios from "axios";
 const options = {
     method: 'GET',
     url: 'https://us-real-estate.p.rapidapi.com/v2/for-sale-by-zipcode',
-    params: {zipcode: '64720', offset: '0', limit: '2'},
+    params: {zipcode: '64720', offset: '0', limit: '50'},
     headers: {
       'X-RapidAPI-Key': '26142419bamsh2821cedacb5cb59p1b74f6jsn2b510a31f5e2',
       'X-RapidAPI-Host': 'us-real-estate.p.rapidapi.com'
