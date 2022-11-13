@@ -20,7 +20,7 @@ app.use(apiRoutes)
 
 //=========test routes====================
 app.get('/', (req: Request, res: Response, next: NextFunction) => {
-    res.json({ message: "Express with TypeScript!"})
+    res.json({ message: "Express with TypeScript! EtRealty API"})
 });
 
 app.get('/test', (req: Request, res: Response, next: NextFunction) => {
