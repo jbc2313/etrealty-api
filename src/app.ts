@@ -27,10 +27,10 @@ app.get('/test', (req: Request, res: Response, next: NextFunction) => {
     // this tests fetch of props
     //runTest();
     //this tests feeding db with props
-    runFeed(); // this actually adds property's to db
+    //runFeed(); // this actually adds property's to db
     
    // testData() // test api returned data 
-    //checkSold();
+    checkSold();
     res.json({ msg: "check server for results"})
     
     // this will return a single property from prisma
