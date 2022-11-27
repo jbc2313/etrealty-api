@@ -18,8 +18,8 @@ export const getPropertys = async () => {
 //    console.log(data.data.home_search)
     const totalApiProperty = data.data.home_search.total // total number of propertys in api
     const apiProps = data.data.home_search.results // array of propertys
-    //console.log("props =>", apiProps)
-    //console.log("Total Props", totalApiProperty)
+    // console.log("props =>", apiProps)
+    // console.log("Total Props", totalApiProperty)
     return {
         totalApiProperty,
         apiProps
