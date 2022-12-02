@@ -2,3 +2,4 @@
 ## PostgresQL db with Prisma
 ### jest as testrunner
 ### db hosted on Rails
+### have not decided where to host this yet.
