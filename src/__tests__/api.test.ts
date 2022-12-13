@@ -6,7 +6,7 @@ import { Request, Response } from 'express'
 // I have not figured out how to test
 // each api endpoint yet.
 // I will update this when I do.
-//
+// I need to find a library to help me do this. 
 
 
 beforeAll(() => {
