@@ -7,6 +7,7 @@ import { Request, Response } from 'express'
 // each api endpoint yet.
 // I will update this when I do.
 // I need to find a library to help me do this. 
+// I have no idea where to start
 
 
 beforeAll(() => {
