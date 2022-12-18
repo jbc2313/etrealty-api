@@ -3,5 +3,5 @@
 ### jest as testrunner
 ### db hosted on Rails.com
 ### have not decided where to host this yet.
-### prisma is the ORM
+### Prisma is the ORM
 ### TypeScript
