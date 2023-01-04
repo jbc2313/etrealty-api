@@ -23,12 +23,14 @@ export const getSingleProperty = (req: Request, res: Response) => {
     .then(prop => {
         res.json({ msg: "Single House Returned", property: prop })
     })
+    
     //const query = req.body.propId
     //findProperty(query)
     //.then(res => {
 
     //})
     // res.json({msg: "SINGLE HOUSE ROUTE"})
+
 }
 
 export const getTotalProperty = (req: Request, res: Response) => {
