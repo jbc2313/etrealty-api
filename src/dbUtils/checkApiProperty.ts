@@ -6,7 +6,7 @@ export async function checkProp(prop: any) {
 
     //console.log("return obj from arg map", p)
 
-
+// CONFORMS DATA TO PRISMA MODEL
 //these 2 function deal with Prisma Model not allowing null in these 2 rows
     const pPhotos = p.photos.map((p: any) => {
         if(p.href === undefined || p.href === null){
