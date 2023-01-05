@@ -19,24 +19,34 @@ export async function checkSold() {
     
     // prisma models from db
     const dbLastUpdate = dbModels.map((mod: any)=> {
-        return mod.ApiUpdateAt;
+        return {
+            id: mod.PropertyId,
+            updated: mod.ApiUpdateAt
+        }
     })
 
-    const dbPropId = dbModels.map((mod: any) => {
-        return mod.PropertyId;
-    });
+    // const dbPropId = dbModels.map((mod: any) => {
+    //     return mod.PropertyId;
+    // });
 
     // propertys from mls api
     const apiLastUpdate = apiModels.apiProps.map((mod: any)=> {
-        return mod.last_update_date;
+        return {
+            id: mod.property_id,
+            updated: mod.last_update_date
+        }
     });
 
-    const apiPropId = apiModels.apiProps.map((mod:any) => {
-        console.log(mod);
-    });
+    // const apiPropId = apiModels.apiProps.map((mod:any) => {
+    //     return mod.property_id;
+    // });
 
-    console.log(`db list = ${dbLastUpdate}, api list = ${apiLastUpdate}`)
-    
+   dbLastUpdate.map((el: any) => {
+        console.log(`db info\n=======\nID: ${el.id}\nUpdated: ${el.updated}\n========\n`);
+   });
+   apiLastUpdate.map((el: any) => {
+        console.log(`api info\n=======\nID: ${el.id}\nUpdated: ${el.updated}\n========\n`);
+   });
      
 }
 
