@@ -25,9 +25,6 @@ export async function checkSold() {
         }
     })
 
-    // const dbPropId = dbModels.map((mod: any) => {
-    //     return mod.PropertyId;
-    // });
 
     // propertys from mls api
     const apiLastUpdate = apiModels.apiProps.map((mod: any)=> {
@@ -37,9 +34,6 @@ export async function checkSold() {
         }
     });
 
-    // const apiPropId = apiModels.apiProps.map((mod:any) => {
-    //     return mod.property_id;
-    // });
 
    dbLastUpdate.map((el: any) => {
         console.log(`db info\n=======\nID: ${el.id}\nUpdated: ${el.updated}\n========\n`);
@@ -48,6 +42,9 @@ export async function checkSold() {
         console.log(`api info\n=======\nID: ${el.id}\nUpdated: ${el.updated}\n========\n`);
    });
      
+
+   // Need to compare the dates on the API update to the DB update
+   // if the times do not match, mark the id in a list of models that need to be updated for double checking
 }
 
 
