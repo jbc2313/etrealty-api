@@ -17,13 +17,23 @@ export async function checkSold() {
 
     console.log(`total from db = ${totaldb}, total from api = ${totalapi}`);
     
+    // prisma models from db
     const dbLastUpdate = dbModels.map((mod: any)=> {
         return mod.ApiUpdateAt;
     })
 
+    const dbPropId = dbModels.map((mod: any) => {
+        return mod.PropertyId;
+    });
+
+    // propertys from mls api
     const apiLastUpdate = apiModels.apiProps.map((mod: any)=> {
         return mod.last_update_date;
-    })
+    });
+
+    const apiPropId = apiModels.apiProps.map((mod:any) => {
+        console.log(mod);
+    });
 
     console.log(`db list = ${dbLastUpdate}, api list = ${apiLastUpdate}`)
     

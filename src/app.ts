@@ -31,19 +31,19 @@ app.get('/test', (req: Request, res: Response, next: NextFunction) => {
     //runFeed(); // this actually adds property's to db
     
     // testData() // test mls api returned data against DB
-    // checkSold(); //checks if prop in db is sold 
-    // res.json({ msg: "check server for results"})
+    checkSold(); //checks if prop in db is sold 
+     res.json({ msg: "check server for results"})
     
     // this will return a single property from prisma
-    const propertyObject = { 
-        property_name: "test_home", 
-        property_id: "8888209488", 
-    }
-    const test = async () => {
-         const result = await findProperty(propertyObject)
-         res.json({ message: result})
-    }
-    test()
+    // const propertyObject = { 
+    //     property_name: "test_home", 
+    //     property_id: "8888209488", 
+    // }
+    // const test = async () => {
+    //      const result = await findProperty(propertyObject)
+    //      res.json({ message: result})
+    // }
+    // test()
 });
 //================end test routes=========================
 
