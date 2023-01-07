@@ -32,7 +32,7 @@ app.get('/test', (req: Request, res: Response, next: NextFunction) => {
     
     // testData() // test mls api returned data against DB
     checkSold(); //checks if prop in db is sold 
-     res.json({ msg: "check server for results"})
+    res.json({ msg: "check server for results"})
     
     // this will return a single property from prisma
     // const propertyObject = { 
