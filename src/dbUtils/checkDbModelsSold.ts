@@ -45,6 +45,28 @@ export async function checkSold() {
 
    // Need to compare the dates on the API update to the DB update
    // if the times do not match, mark the id in a list of models that need to be updated for double checking
+   
+   // lists of updated dates for db and api
+   const dbList = dbLastUpdate.map((el: any) => {
+        return el.updated
+   })
+   const apiList = apiLastUpdate.map((el:any) => {
+        return el.updated
+   })
+
+
+   console.log(`db size = ${dbList.length}, api size = ${apiList.length}`);
+
+   // list of propertys in db that need to be updated. the rest need to be marked unlisted.
+   
+   dbLastUpdate.map((el:any) => {
+        const id = el.id;
+        const match = apiLastUpdate.filter((prop:any) => prop.id === id);
+        console.log(match);
+        console.log(`Found a match for ${id}`) 
+   })
+
+
 }
 
 
