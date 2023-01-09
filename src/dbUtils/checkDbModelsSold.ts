@@ -58,7 +58,7 @@ export async function checkSold() {
    console.log(`db size = ${dbList.length}, api size = ${apiList.length}`);
 
    // list of propertys in db that need to be updated. the rest need to be marked unlisted.
-   
+   // able to view what is unlisted and what needs to be updated.  
    dbLastUpdate.map((el:any) => {
         const id = el.id;
         const match = apiLastUpdate.filter((prop:any) => prop.id === id);
