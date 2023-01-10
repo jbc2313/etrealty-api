@@ -61,13 +61,16 @@ export async function checkSold() {
    // able to view what is unlisted and what needs to be updated.  
    dbLastUpdate.map((el:any) => {
         const id = el.id;
+        const updatedDate = el.updated;
         const match = apiLastUpdate.filter((prop:any) => prop.id === id);
         if(match.length != 0){
-            console.log("==");
-            console.log(match);
+            console.log("===========");
+            //console.log(match);
             console.log(`Found a match for ${id}`)
-            console.log(`id of match is ${match[0].id}`);
+            console.log(`match id:${match[0].id}, db id: ${id}`);
+            console.log(`match updated:${match[0].updated}, db updated:${updatedDate}`);
         } else {
+            console.log("-------------------------------");
             console.log("NO MATCH (means unlisted now)");
         }
    })
