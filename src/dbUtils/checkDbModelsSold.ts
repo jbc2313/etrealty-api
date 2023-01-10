@@ -58,20 +58,26 @@ export async function checkSold() {
    console.log(`db size = ${dbList.length}, api size = ${apiList.length}`);
 
    // list of propertys in db that need to be updated. the rest need to be marked unlisted.
-   // able to view what is unlisted and what needs to be updated.  
+   // able to view what is unlisted and what needs to be updated.
    dbLastUpdate.map((el:any) => {
         const id = el.id;
         const updatedDate = el.updated;
         const match = apiLastUpdate.filter((prop:any) => prop.id === id);
         if(match.length != 0){
+            // if matched id's updated time is different need to update the info in the db property
             console.log("===========");
-            //console.log(match);
             console.log(`Found a match for ${id}`)
             console.log(`match id:${match[0].id}, db id: ${id}`);
             console.log(`match updated:${match[0].updated}, db updated:${updatedDate}`);
+            if(updatedDate !== match[0].updated) {
+                // do work to updated db property info here
+                console.log("************* NEED TO UPDATE THE DB!!!! *************");
+            }
         } else {
+            // if no match property is unlisted.. NEED TO UPDATE THE DB INFO AS WELL STATING ITS UNLISTED NOW
             console.log("-------------------------------");
             console.log("NO MATCH (means unlisted now)");
+            console.log("######## NEED TO UPDATE THE DB (UNLISTED NOW) #########");
         }
    })
 
