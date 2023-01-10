@@ -62,9 +62,11 @@ export async function checkSold() {
    dbLastUpdate.map((el:any) => {
         const id = el.id;
         const match = apiLastUpdate.filter((prop:any) => prop.id === id);
-        if(match.length != 0){ 
+        if(match.length != 0){
+            console.log("==");
             console.log(match);
             console.log(`Found a match for ${id}`)
+            console.log(`id of match is ${match[0].id}`);
         } else {
             console.log("NO MATCH (means unlisted now)");
         }
