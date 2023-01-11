@@ -5,4 +5,4 @@
 ### db hosted on Rails.com
 ### have not decided where to host this yet.
 ### Prisma is the ORM
-### TypeScript
+### TypeScript is #1
