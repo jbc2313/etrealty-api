@@ -61,6 +61,12 @@ export async function checkSold() {
 
    // list of propertys in db that need to be updated. the rest need to be marked unlisted.
    // able to view what is unlisted and what needs to be updated.
+   
+   // list of db models id's that need to be updated
+
+   const dbUpdateList: any = [];
+   const dbUnlistList: any = [];
+
    dbLastUpdate.map((el:any) => {
         const id = el.id;
         const updatedDate = el.updated;
@@ -72,23 +78,38 @@ export async function checkSold() {
             console.log(`match id:${match[0].id}, db id: ${id}`);
             console.log(`match updated:${match[0].updated}, db updated:${updatedDate}`);
             if(updatedDate !== match[0].updated) {
-                // do work to updated db property info here
+                // add to update list
+                dbUpdateList.push(id);
                 console.log("************* NEED TO UPDATE THE DB!!!! *************");
                 // pass in all db propertys and api propertys to a FUNCTION, with the list of db propertys
-                // that need to be updated, and/or marked as unlisted
-
-                updateInfo();
-
+                // that need to be updated
+                // pass in dbModels, and apiModels
             }
         } else {
+            // add id to unlist list
+            dbUnlistList.push(id);
             // if no match property is unlisted.. NEED TO UPDATE THE DB INFO AS WELL STATING ITS UNLISTED NOW
             console.log("-------------------------------");
             console.log("NO MATCH (means unlisted now)");
             console.log("######## NEED TO UPDATE THE DB (Property UNLISTED NOW) #########");
             // FUNCTION TO UNLIST DB MODEL BECAUSE API SAID IT IS UNLISTED
-            unlistModel();
+            // Pass in a list of db models ID's that need to be unlisted.
         }
    })
+
+   // do work on models in DB now.
+    
+   console.log("list of update id's");
+   dbUpdateList.forEach((el:any) => {
+        console.log(el);
+   })
+   console.log("list of unlist id's");
+   dbUnlistList.forEach((el:any) => {
+        console.log(el);
+   })
+
+
+
 
 
 }
