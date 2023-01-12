@@ -1,5 +1,6 @@
 import prisma from "./prismaClient";
 import { getPropertys } from "../utils/fetchPropertys";
+import { updateInfo } from "./updateDbModel";
 
 // This function will check the models in the db against the Home API
 // We will be checking if the home sold, if it sold we will update.
@@ -72,6 +73,11 @@ export async function checkSold() {
             if(updatedDate !== match[0].updated) {
                 // do work to updated db property info here
                 console.log("************* NEED TO UPDATE THE DB!!!! *************");
+                // pass in all db propertys and api propertys to a FUNCTION, with the list of db propertys
+                // that need to be updated, and/or marked as unlisted
+
+                updateInfo();
+
             }
         } else {
             // if no match property is unlisted.. NEED TO UPDATE THE DB INFO AS WELL STATING ITS UNLISTED NOW
