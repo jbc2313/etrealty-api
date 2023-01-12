@@ -77,7 +77,7 @@ export async function checkSold() {
             // if no match property is unlisted.. NEED TO UPDATE THE DB INFO AS WELL STATING ITS UNLISTED NOW
             console.log("-------------------------------");
             console.log("NO MATCH (means unlisted now)");
-            console.log("######## NEED TO UPDATE THE DB (UNLISTED NOW) #########");
+            console.log("######## NEED TO UPDATE THE DB (Property UNLISTED NOW) #########");
         }
    })
 
