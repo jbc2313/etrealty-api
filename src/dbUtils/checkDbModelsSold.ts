@@ -1,6 +1,7 @@
 import prisma from "./prismaClient";
 import { getPropertys } from "../utils/fetchPropertys";
 import { updateInfo } from "./updateDbModel";
+import { unlistModel } from "./unlistDbModel";
 
 // This function will check the models in the db against the Home API
 // We will be checking if the home sold, if it sold we will update.
@@ -84,6 +85,8 @@ export async function checkSold() {
             console.log("-------------------------------");
             console.log("NO MATCH (means unlisted now)");
             console.log("######## NEED TO UPDATE THE DB (Property UNLISTED NOW) #########");
+            // FUNCTION TO UNLIST DB MODEL BECAUSE API SAID IT IS UNLISTED
+            unlistModel();
         }
    })
 
