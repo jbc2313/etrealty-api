@@ -8,7 +8,8 @@ export async function unlistModel(list: any) {
     //   2022-12-13T15:01:02Z
     
     // NEED TO GET TIME TO THIS FORMAT ABOVE
-    const time: any = Date.now();
+    const t = new Date;
+    const time = t.toJSON(); 
     console.log("TIME IS:");
     console.log(time);
 
@@ -17,7 +18,7 @@ export async function unlistModel(list: any) {
     //         where: { PropertyId: el },
     //         data: { 
     //             Status: "Unlisted", 
-    //             ApiUpdateAt: " "
+    //             ApiUpdateAt: time,
     //         } 
     //     })        
     // })
