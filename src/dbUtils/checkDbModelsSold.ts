@@ -103,12 +103,17 @@ export async function checkSold() {
    dbUpdateList.forEach((el:any) => {
         console.log(el);
    })
+   // UPDATE DB HERE (update info)
+   updateInfo(dbModels, apiModels, dbUpdateList);
+
+
+
    console.log("list of unlist id's");
    dbUnlistList.forEach((el:any) => {
         console.log(el);
    })
-
-
+   // UPDATE DB HERE (unlist model here)
+   unlistModel(dbUnlistList);
 
 
 
