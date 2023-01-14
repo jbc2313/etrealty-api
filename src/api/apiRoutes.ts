@@ -7,6 +7,8 @@ router.get('/api/all', apiController.getAllProperty)
 
 router.get('/api/total', apiController.getTotalProperty)
 
+router.get('/api/forsale', apiController.getForSaleProperty)
+
 router.get('/api/property/:id', apiController.getSingleProperty)
 
 

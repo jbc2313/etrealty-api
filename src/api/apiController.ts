@@ -10,6 +10,22 @@ export const getAllProperty = (req: Request, res: Response) => {
     })
 }
 
+export const getForSaleProperty = (req: Request, res: Response) => {
+    console.log('getForSaleProperty Route Pinged.')
+    prisma.property.findMany({
+       where: {
+            Status: {
+               not: "Unlisted",
+            }
+       }
+    }).then(props => {
+        res.json({
+            msg: "All ForSale Properties returned", 
+            properties: props,
+        })
+    });
+}
+
 export const getSingleProperty = (req: Request, res: Response) => {
     console.log('getSingleProperty Route Pinged.')
     console.log(req.params.id)
