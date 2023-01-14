@@ -23,7 +23,8 @@ export async function checkSold() {
     const dbLastUpdate = dbModels.map((mod: any)=> {
         return {
             id: mod.PropertyId,
-            updated: mod.ApiUpdateAt
+            updated: mod.ApiUpdateAt,
+            status: mod.Status
         }
     })
 
@@ -32,7 +33,8 @@ export async function checkSold() {
     const apiLastUpdate = apiModels.apiProps.map((mod: any)=> {
         return {
             id: mod.property_id,
-            updated: mod.last_update_date
+            updated: mod.last_update_date,
+            status: mod.status
         }
     });
 
@@ -87,18 +89,23 @@ export async function checkSold() {
             }
         } else {
             // add id to unlist list
-            dbUnlistList.push(id);
-            // if no match property is unlisted.. NEED TO UPDATE THE DB INFO AS WELL STATING ITS UNLISTED NOW
-            console.log("-------------------------------");
-            console.log("NO MATCH (means unlisted now)");
-            console.log("######## NEED TO UPDATE THE DB (Property UNLISTED NOW) #########");
-            // FUNCTION TO UNLIST DB MODEL BECAUSE API SAID IT IS UNLISTED
-            // Pass in a list of db models ID's that need to be unlisted.
+            if (el.status === "Unlisted"){
+                console.log("DB model already is Unlisted");
+            }else{
+                dbUnlistList.push(id);
+                // if no match property is unlisted.. NEED TO UPDATE THE DB INFO AS WELL STATING ITS UNLISTED NOW
+                console.log("-------------------------------");
+                console.log("NO MATCH (means unlisted now)");
+                console.log("######## NEED TO UPDATE THE DB (Property UNLISTED NOW) #########");
+                // FUNCTION TO UNLIST DB MODEL BECAUSE API SAID IT IS UNLISTED
+                // Pass in a list of db models ID's that need to be unlisted.
+            }
         }
    })
 
    // do work on models in DB now.
-    
+
+   //this updates the db model with new info from api
    console.log("list of update id's");
    dbUpdateList.forEach((el:any) => {
         console.log(el);
@@ -106,15 +113,17 @@ export async function checkSold() {
    // UPDATE DB HERE (update info)
    updateInfo(dbModels, apiModels, dbUpdateList);
 
-
-
-   console.log("list of unlist id's");
-   dbUnlistList.forEach((el:any) => {
-        console.log(el);
-   })
-   // UPDATE DB HERE (unlist model here)
-   unlistModel(dbUnlistList);
-
+   //this updates the models in the db to have the status Unlisted
+   if(dbUnlistList > 0) {
+       console.log("list of unlist id's");
+       dbUnlistList.forEach((el:any) => {
+            console.log(el);
+       })
+       // UPDATE DB HERE (unlist model here)
+       unlistModel(dbUnlistList);
+   }else{
+        console.log("NO DB MODELS NEED UNLISTED, ALL UP TO DATE");
+   }
 
 
 }

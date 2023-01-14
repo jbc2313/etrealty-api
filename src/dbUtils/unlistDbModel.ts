@@ -14,38 +14,15 @@ export async function unlistModel(list: any) {
     console.log(time);
   
 
-    //move this out of herre to another part of code;
-    // check to make sure property is not already Unlisted
-    // const updatedList: any = [];
-    //
-    // list.forEach((el:string)=> {
-    //    prisma.property.findFirst({
-    //         where: { PropertyId: el },
-    //    }).then(model => {
-    //         if(model?.Status === "Unlisted"){
-    //             console.log(model); 
-    //             //updatedList.push(model?.PropertyId);
-    //         }else{
-    //             //updatedList.push(model?.PropertyId);
-    //         }
-    //    })
-    // });
-    //
-    // console.log(updatedList);
-
-   
-
-
-
-//     list.forEach((el: string)=> {
-//         prisma.property.update({
-//             where: { PropertyId: el },
-//             data: { 
-//                 Status: "Unlisted", 
-//                 ApiUpdateAt: time,
-//             } 
-//         }).then(returned => console.log('Model updated'));
-//     })
+    list.forEach((el: string)=> {
+        prisma.property.update({
+            where: { PropertyId: el },
+            data: { 
+                Status: "Unlisted", 
+                ApiUpdateAt: time,
+            } 
+        }).then(returned => console.log('Model updated'));
+    })
 
 
 
