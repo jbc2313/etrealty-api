@@ -104,7 +104,7 @@ export async function checkSold() {
    })
 
    // do work on models in DB now.
-
+    console.log("======Work in Db begins=====");
    //this updates the db model with new info from api
    console.log("list of update id's");
    dbUpdateList.forEach((el:any) => {
