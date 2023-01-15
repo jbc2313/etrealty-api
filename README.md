@@ -1,4 +1,5 @@
 # API for etrealty/homestead realty next.js frontend
+## Updated info from mls every day.
 ## PostgresQL db
 ### Jest as testrunner.
 ### Might move to vitest..
