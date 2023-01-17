@@ -1,4 +1,3 @@
-import { getPropertys } from "./fetchPropertys";
 import { createProperty } from "../dbUtils/createSingleModel";
 import { findProperty } from "../dbUtils/findSingleModel";
 import { checkProp } from "../dbUtils/checkApiProperty";
@@ -15,11 +14,11 @@ let props
 let totProps
 
 
-export const feed = (propertys: any) => {
+export const feed = async (propertys: any) => {
     props = propertys.apiProps;
     totProps = propertys.totalApiProperty;
     // see if props are already in Db, and handle accordingly
-    props.forEach((prop: any)=> {
+    const x = await props.forEach((prop: any)=> {
         findProperty(prop)
         .then(res => {
             if(res === null){
@@ -34,6 +33,8 @@ export const feed = (propertys: any) => {
                 // if changed need to update that property in db
 
                 // THIS PROBABLY NEEDS TO BE AN ANSYNC FUNCTION OR PROMISE
+                // REALY MESSED UP HERE, I MADE THIS FUNCTION USE ALL API DATA INSTEAD OF SINGLE PROP 
+                //checkProp();
             }
         })
     })
