@@ -5,8 +5,8 @@ import dotenv from 'dotenv';
 import { runTest } from './__tests__/testFetch';
 import { runFeed } from './__tests__/testDbCrud';
 import { testData } from './__tests__/testApiDataReturn';
-import { checkSold } from './dbUtils/checkDbModelsSold';
 import { findProperty } from './dbUtils/findSingleModel';
+import { runCheckTest } from './__tests__/testCheckProp';
 import { cronJob } from './utils/nodeCron';
 //-----------endtesting-----------------
 
@@ -21,7 +21,7 @@ app.use(express.urlencoded({extended: true}))
 app.use(apiRoutes)
 
 //======CRON JOBS AND CRONITOR MONITORING=====
-cronJob();
+//cronJob();
 
 //=========test routes====================
 app.get('/', (req: Request, res: Response, next: NextFunction) => {
@@ -32,10 +32,10 @@ app.get('/test', (req: Request, res: Response, next: NextFunction) => {
     // this tests fetch of props
     //runTest();
     //this tests feeding db with props
-    //runFeed(); // this actually adds property's to db
+    runFeed(); // this actually adds property's to db
     
     // testData() // test mls api returned data against DB
-    //checkSold(); //checks if prop in db is sold 
+    //runCheckTest(); //checks if prop in db is sold 
     res.json({ msg: "check server for results"})
     
     // this will return a single property from prisma

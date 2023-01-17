@@ -15,27 +15,26 @@ let props
 let totProps
 
 
-export const feed = () => {
-    getPropertys()
-    .then(data => {
-        props = data.apiProps;
-        totProps = data.totalApiProperty;
-        // see if props are already in Db, and handle accordingly
-        props.forEach((prop: any)=> {
-            findProperty(prop)
-            .then(res => {
-                if(res === null){
-                    checkProp(prop)
-                    .then((p: any) => {
-                        createProperty(p)
-                    })
-                }else{
-                    console.log("property already in db")
-                    // TODO
-                    // need to check last updated date in db with newly fetched property.
-                    // if changed need to update that property in db
-                }
-            })
+export const feed = (propertys: any) => {
+    props = propertys.apiProps;
+    totProps = propertys.totalApiProperty;
+    // see if props are already in Db, and handle accordingly
+    props.forEach((prop: any)=> {
+        findProperty(prop)
+        .then(res => {
+            if(res === null){
+                checkProp(prop)
+                .then((p: any) => {
+                    createProperty(p)
+                })
+            }else{
+                console.log("property already in db")
+                // TODO
+                // need to check last updated date in db with newly fetched property.
+                // if changed need to update that property in db
+
+                // THIS PROBABLY NEEDS TO BE AN ANSYNC FUNCTION OR PROMISE
+            }
         })
     })
 }

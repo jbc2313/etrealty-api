@@ -6,10 +6,11 @@ import { unlistModel } from "./unlistDbModel";
 // This function will check the models in the db against the Home API
 // We will be checking if the home sold, if it sold we will update.
 
-export async function checkSold() {
+export async function checkSold(properties: any) {
 
     const dbModels = await prisma.property.findMany();
-    const apiModels = await getPropertys()
+    //const apiModels = await getPropertys()
+    const apiModels = properties
 
     //console.log("DB MODELS => ", dbModels);
     //console.log("API MODELS => ", apiModels);
