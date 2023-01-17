@@ -38,7 +38,7 @@ app.get('/test', (req: Request, res: Response, next: NextFunction) => {
     
     // testData() // test mls api returned data against DB
     //runCheckTest(); //checks if prop in db is sold 
-    testMainCron(); //feeds and checks db
+   // testMainCron(); //feeds and checks db
     res.json({ msg: "check server for results"})
     
     // this will return a single property from prisma
