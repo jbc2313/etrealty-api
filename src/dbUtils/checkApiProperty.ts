@@ -8,19 +8,31 @@ export async function checkProp(prop: any) {
 
 // CONFORMS DATA TO PRISMA MODEL
 //these 2 function deal with Prisma Model not allowing null in these 2 rows
-    const pPhotos = p.photos.map((p: any) => {
-        if(p.href === undefined || p.href === null){
-            return "no photo available"
-        }
-        return p.href
-    })
-    const pTags = p.tags.map((t: any) => {
-        if(t === undefined || t === null){
-            return "no tag"
-        }
-        return t
-    })
+    
+    // potential issue here with the map of photos and tag
+    let pPhotos;
+    let pTags;
 
+    if (p.photos === null){
+        pPhotos = "no photo available";  
+    } else {
+        pPhotos = p.photos.map((p: any) => {
+            if(p.href === undefined || p.href === null){
+                return "no photo available"
+            }
+            return p.href
+        })
+    }
+    if (p.tags === null){
+        pTags = "no tag"
+    }else{
+        pTags = p.tags.map((t: any) => {
+            if(t === undefined || t === null){
+                return "no tag"
+            }
+            return t
+        })
+    }
     const preProp: {[key: string]: any} = {
         PropertyId: p?.property_id,
         ApiUpdateAt: p?.last_update_date,
