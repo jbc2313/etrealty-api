@@ -20,6 +20,9 @@ app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 app.use(apiRoutes)
 
+//======CRON JOBS AND CRONITOR MONITORING=====
+cronJob();
+
 //=========test routes====================
 app.get('/', (req: Request, res: Response, next: NextFunction) => {
     res.json({ message: "Express with TypeScript! EtRealty API"})
@@ -33,7 +36,6 @@ app.get('/test', (req: Request, res: Response, next: NextFunction) => {
     
     // testData() // test mls api returned data against DB
     //checkSold(); //checks if prop in db is sold 
-    cronJob();
     res.json({ msg: "check server for results"})
     
     // this will return a single property from prisma
