@@ -7,6 +7,7 @@ import { runFeed } from './__tests__/testDbCrud';
 import { testData } from './__tests__/testApiDataReturn';
 import { checkSold } from './dbUtils/checkDbModelsSold';
 import { findProperty } from './dbUtils/findSingleModel';
+import { cronJob } from './utils/nodeCron';
 //-----------endtesting-----------------
 
 import apiRoutes from './api/apiRoutes'
@@ -31,7 +32,8 @@ app.get('/test', (req: Request, res: Response, next: NextFunction) => {
     //runFeed(); // this actually adds property's to db
     
     // testData() // test mls api returned data against DB
-    checkSold(); //checks if prop in db is sold 
+    //checkSold(); //checks if prop in db is sold 
+    cronJob();
     res.json({ msg: "check server for results"})
     
     // this will return a single property from prisma

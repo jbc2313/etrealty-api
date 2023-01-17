@@ -22,7 +22,10 @@
 
 #### TODO
 -------------------------------
-> Need to setup cron job to run X amount of times a day,
+> Need a main file/function that calls the mls API
+> The db feed and db update function will be called from main file/function.
+> That way I am only calling the api once for all the functions that need it.
+> Need to setup cron job to run every 3 hours,
 > the jobs that need to run everyday,
 > feed the db with new propertys from mls api,
 > check db propertys against mls api for updates/unlist,
