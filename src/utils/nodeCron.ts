@@ -16,12 +16,7 @@ export function cronJob() {
         // monitor.ping({message: 'Alive'});
         // monitor.ping({count: x, error_count: z});
         // x++
-
-         
-
-
+        mainCronJob();
 
     });
-
-
 }
