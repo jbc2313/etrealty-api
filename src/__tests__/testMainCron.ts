@@ -1,4 +1,4 @@
-import { mainCronJob } from "../utils/feedandupdate";
+import mainCronJob from "../utils/feedandupdate";
 
 export function testMainCron() {
     mainCronJob();

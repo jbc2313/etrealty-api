@@ -4,12 +4,14 @@ import dotenv from 'dotenv';
 import { cronJob } from './utils/nodeCron';
 
 //----------testing--------------
-import { runTest } from './__tests__/testFetch';
-import { runFeed } from './__tests__/testDbCrud';
-import { testData } from './__tests__/testApiDataReturn';
-import { findProperty } from './dbUtils/findSingleModel';
-import { runCheckTest } from './__tests__/testCheckProp';
-import { testMainCron } from './__tests__/testMainCron';
+
+// import { runTest } from './__tests__/testFetch';
+// import { runFeed } from './__tests__/testDbCrud';
+// import { testData } from './__tests__/testApiDataReturn';
+// import { findProperty } from './dbUtils/findSingleModel';
+// import { runCheckTest } from './__tests__/testCheckProp';
+// import { testMainCron } from './__tests__/testMainCron';
+
 //-----------endtesting-----------------
 
 import apiRoutes from './api/apiRoutes'
