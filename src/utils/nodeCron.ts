@@ -1,22 +1,21 @@
 // CRON RELATED IMPORTS
 const cron = require('node-cron');
-const dotenv = require('dotenv');
-dotenv.config()
-const cronitor = require('cronitor')(process.env.CRONITOR_KEY)
-import { mainCronJob } from './feedandupdate';
+// const dotenv = require('dotenv');
+// dotenv.config()
+// const cronitor = require('cronitor')(process.env.CRONITOR_KEY)
+import mainCronJob from './feedandupdate';
 
-// const monitor = new cronitor.Monitor('Test Cron Job');
+//const monitor = new cronitor.Monitor('ETrealty db feed and update');
 
-cronitor.wraps(cron);
+//cronitor.wraps(cron);
 
 export function cronJob() {
 
-    cronitor.schedule('ETrealtyCron','0 */3 * * *', ()=> {
+    cron.schedule('0 */3 * * *', ()=> {
         //console.log("CRONITOR/NODE-CRON JOB BABY");
         // monitor.ping({message: 'Alive'});
         // monitor.ping({count: x, error_count: z});
         // x++
         mainCronJob();
-
     });
 }
