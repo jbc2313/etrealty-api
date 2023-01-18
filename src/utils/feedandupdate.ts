@@ -6,7 +6,7 @@ const dotenv = require('dotenv');
 dotenv.config()
 const cronitor = require('cronitor')(process.env.CRONITOR_KEY)
 
-let mainCronJob = cronitor.wrap('ETrealty-dbfeed-dbupdate', async function() {
+let mainCronJob = cronitor.wrap('etRealty-dbupdate', async function() {
     let propertys = await getPropertys();
     
     feed(propertys).then(resolved => {
