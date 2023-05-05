@@ -5,9 +5,7 @@ const cron = require('node-cron');
 // const cronitor = require('cronitor')(process.env.CRONITOR_KEY)
 import mainCronJob from './feedandupdate';
 
-//const monitor = new cronitor.Monitor('ETrealty db feed and update');
 
-//cronitor.wraps(cron);
 
 export function cronJob() {
 

@@ -5,7 +5,7 @@ import { cronJob } from './utils/nodeCron';
 
 //----------testing--------------
 
-// import { runTest } from './__tests__/testFetch';
+import { runTest } from './__tests__/testFetch';
 // import { runFeed } from './__tests__/testDbCrud';
 // import { testData } from './__tests__/testApiDataReturn';
 // import { findProperty } from './dbUtils/findSingleModel';
@@ -35,15 +35,23 @@ app.get('/', (req: Request, res: Response, next: NextFunction) => {
 
 app.get('/test', (req: Request, res: Response, next: NextFunction) => {
     // this tests fetch of props
-    //runTest();
+    const test = async () => {
+        const data = await runTest();
+        res.send(data);
+    }
+    test();
     //this tests feeding db with props
     //runFeed(); // this actually adds property's to db
     
     // testData() // test mls api returned data against DB
     //runCheckTest(); //checks if prop in db is sold 
    // testMainCron(); //feeds and checks db
-    res.json({ msg: "check server for results"})
+   // res.json({ msg: "check server for results"})
+   
+
     
+
+
     // this will return a single property from prisma
     // const propertyObject = { 
     //     property_name: "test_home", 

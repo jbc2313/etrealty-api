@@ -1,11 +1,10 @@
 import { getPropertys } from "../utils/fetchPropertys";
 
-export const runTest = () => {
+export const runTest = async () => {
     getPropertys()
     .then(data => {
-        console.log("entire returned object =>>", data.apiProps)
-        console.log("total props in api", data.totalApiProperty)
-        //console.log("DATA OBJ => ", data)
+        console.log("DATA OBJ => ", data.data)
+        return data.data
     })
 }
 
