@@ -1,7 +1,10 @@
 import { checkSold } from '../dbUtils/checkDbModelsSold';
 import { feed } from '../utils/feedDb';
 import { getPropertys } from "../utils/fetchPropertys";
-// cronitor
+// cronitor is used to watch this and send updates/emails if this goes down/stops working
+//
+// THIS IS THE MAIN LOOP THAT FEEDS AND CHECKS DB FOR UPDATES TO OLD DATA
+//
 const dotenv = require('dotenv');
 dotenv.config()
 const cronitor = require('cronitor')(process.env.CRONITOR_KEY)

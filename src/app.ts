@@ -25,7 +25,8 @@ app.use(express.urlencoded({extended: true}))
 app.use(apiRoutes)
 
 //======CRON JOBS AND CRONITOR MONITORING=====
-cronJob();
+// TURNED OFF FOR TESTING ON THIS BRANCH!!!
+//cronJob();
 
 //=========test routes====================
 app.get('/', (req: Request, res: Response, next: NextFunction) => {
