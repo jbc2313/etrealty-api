@@ -37,7 +37,7 @@ app.get('/test', (req: Request, res: Response, next: NextFunction) => {
     // this tests fetch of props
     const test = async () => {
         const data = await runTest();
-        res.send(data);
+        res.json(data);
     }
     test();
     //this tests feeding db with props
