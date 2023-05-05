@@ -4,7 +4,6 @@
 ### Jest as testrunner.
 ### Might move to vitest..
 ### db hosted on Rails.com
-### have not decided where to host this yet.
 ### Prisma is the ORM
 ### TypeScript is #1
 
@@ -26,8 +25,10 @@
 > the jobs that need to run everyday,
 > feed the db with new propertys from mls api,
 > check db propertys against mls api for updates/unlist,
+> That way I am only calling the api once for all the functions that need it.
+> Need to setup cron job to run every 3 hours,
 
 #### TODO
 -------------------------------
-> That way I am only calling the api once for all the functions that need it.
-> Need to setup cron job to run every 3 hours,
+> Changing the api source to MLSGRID.
+> Change Everything to work with MLSGRID now.
