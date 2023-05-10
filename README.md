@@ -32,3 +32,10 @@
 -------------------------------
 > Changing the api source to MLSGRID.
 > Change Everything to work with MLSGRID now.
+
+
+#### Useful commands for debugging MLSGRID json
+```
+jq '.value[1] | keys_unsorted' <file>`
+
+```
