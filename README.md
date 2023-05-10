@@ -34,8 +34,14 @@
 > Change Everything to work with MLSGRID now.
 
 
-#### Useful commands for debugging MLSGRID json
-```
-jq '.value[1] | keys_unsorted' <file>`
 
-```
+
+#### Useful commands for debugging MLSGRID json
+-------------------------------------------------
+
+- get only the keys of the json's key-value pairs.
+`jq ".value[1] | keys_unsorted" >file< `
+
+- sort the keys by frequencey of occurence
+`sort <file> | uniq -c | sort -n`
+
