@@ -28,7 +28,7 @@ app.use(apiRoutes)
 // TURNED OFF FOR TESTING ON THIS BRANCH!!!
 //cronJob();
 
-//=========test routes====================
+//===============================test routes================================================
 app.get('/', (req: Request, res: Response, next: NextFunction) => {
     res.json({ message: "Express with TypeScript! EtRealty API"})
 });
@@ -49,9 +49,6 @@ app.get('/test', (req: Request, res: Response, next: NextFunction) => {
    // res.json({ msg: "check server for results"})
    
 
-    
-
-
     // this will return a single property from prisma
     // const propertyObject = { 
     //     property_name: "test_home", 
@@ -64,6 +61,8 @@ app.get('/test', (req: Request, res: Response, next: NextFunction) => {
     // test()
 });
 //================end test routes=========================
+
+
 
 
 app.listen(port, () => {
