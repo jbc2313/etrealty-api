@@ -33,6 +33,7 @@
 > Changing the api source to MLSGRID.
 > Change Everything to work with MLSGRID now.
 > Working on rewriting this api basically from scratch.
+> Currently working on figuring out all the values the new api gives for each home. So i can update the Prisma Schema.
 
 
 
