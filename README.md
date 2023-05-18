@@ -46,3 +46,5 @@
 - sort the keys by frequencey of occurence
 `sort <file> | uniq -c | sort -n`
 
+- Remove the quotes around the sorted keys
+`awk -F'"' '{print $2}' sortedkeys_50.txt`
