@@ -1,13 +1,17 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
+
+
+// DO NOT REGENERATE ie.. `prisma generate` until file is complete.
+
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url      = env("GRID_DATABASE_URL")
 }
 
 model Property {
@@ -40,3 +44,134 @@ model Property {
   Address String?  //Line in ApiQuery
   County String?
 }
+
+// NEW KEYS
+// HAVE TO GO THROUGH ALL OF THESE AND FIND CORRECT TYPES FOR EACH~!
+Utilities
+HMS_SaleOptions
+PossibleUse
+GreenEnergyEfficient
+LotSizeDimensions
+Zoning
+RoadSurfaceType
+VirtualTourURLUnbranded
+WindowFeatures
+HMS_Telecom
+SecurityFeatures
+AssociationFeeIncludes
+HMS_InsideCityLimits
+OwnershipType
+Appliances
+RoadResponsibility
+BuilderModel
+AssociationAmenities
+CoListAgentFullName
+CoListAgentKey
+CoListAgentMlsId
+CoListOfficeKey
+CoListOfficeMlsId
+CoListOfficeName
+CoListOfficePhone
+StreetDirPrefix
+YearBuilt
+Flooring
+HMS_EstimatedCompletionDays
+HMS_OtherRoomFeatures
+Possession
+AssociationFeeFrequency
+HMS_WarrantyDescription
+InteriorFeatures
+PatioAndPorchFeatures
+RoomsTotal
+HighSchool
+MiddleOrJuniorSchool
+ArchitecturalStyle
+HMS_InstallationRFactorCeiling
+HMS_InstallationRFactorWall
+BuilderName
+ElementarySchool
+FireplaceFeatures
+LaundryFeatures
+LotFeatures
+PropertyCondition
+HMS_DiningAreaFeatures
+FireplacesTotal
+AboveGradeFinishedArea
+AboveGradeFinishedAreaUnits
+BelowGradeFinishedArea
+BelowGradeFinishedAreaUnits
+GarageSpaces
+Basement
+BasementYN
+BathroomsFull
+BathroomsHalf
+BedroomsTotal
+ConstructionMaterials
+Cooling
+CoolingYN
+FireplaceYN
+GarageYN
+HMS_BathroomsTotalDecimal
+HMS_ExclusionsYN
+HMS_FloorPlanFeatures
+Heating
+LivingArea
+Ownership
+Roof
+LotSizeArea
+LotSizeSquareFeet
+ParkingFeatures
+LotSizeUnits
+HMS_AgeDescription
+AssociationFee
+HMS_LegalDescription
+SubAgencyCompensationType
+HMS_MaintenanceProvidedYN
+HighSchoolDistrict
+Sewer
+SubdivisionName
+WaterSource
+Directions
+StreetNumber
+HMS_InFloodPlain
+HMS_TaxTotalAmount
+PropertySubType
+@odata.id
+BuyerAgencyCompensation
+BuyerAgencyCompensationType
+City
+CountyOrParish
+InternetAddressDisplayYN
+InternetEntireListingDisplayYN
+ListAgentDirectPhone
+ListAgentFullName
+ListAgentKey
+ListAgentMlsId
+ListOfficeKey
+ListOfficeMlsId
+ListOfficeName
+ListOfficePhone
+ListPrice
+ListingAgreement
+ListingContractDate
+ListingId
+ListingKey
+ListingTerms
+MLSAreaMajor
+MlgCanUse
+MlgCanView
+MlsStatus
+ModificationTimestamp
+OriginatingSystemName
+ParcelNumber
+PhotosChangeTimestamp
+PhotosCount
+PostalCode
+PropertyType
+PublicRemarks
+StandardStatus
+StateOrProvince
+StreetName
+StreetSuffix
+SubAgencyCompensation
+
