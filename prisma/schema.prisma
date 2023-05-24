@@ -14,164 +14,162 @@ datasource db {
   url      = env("GRID_DATABASE_URL")
 }
 
+
+
+// POSSIBLE NULL ARRAY FIX - USE Json? 
+
 model Property {
-  PropertyId String @id //QueryApi has this as a string. Will have to parse to int.
-  ApiUpdateAt String?
-  Tags String[]
-  PermLink String?
-  Status String?
-  ListDate String?
-  Branding String?
-  Photos String[]
-  ListPrice Int?
-  YearBuilt Int?
-  BathsFull Int?
-  BathsHalf Int?
-  Baths Int?
-  LotSqft Int?
-  Sqft Int?
-  Garage Int?
-  Stories Int?
-  Beds Int?
-  PropertyType String?
-  ListingId String?
-  PostalCode String?
-  State String?
-  Longitude Float?
-  Latitude Float?
-  City String?
-  StateCode String?
-  Address String?  //Line in ApiQuery
-  County String?
+    ListingId String @id
+    Utilities Json? // Posibbly Null Array
+    HMS_SaleOptions String?
+    PossibleUse Json? // Posibbly Null Array
+    GreenEnergyEfficient Json? //Possibly Null Array
+    LotSizeDimensions String?
+    Zoning String?
+    RoadSurfaceType Json? //Possibly Null Array
+    VirtualTourURLUnbranded Json? //Possibly Null Array
+    WindowFeatures Json? //Possibly Null Array
+    HMS_Telecom String?
+    SecurityFeatures Json? //Possibly Null Array
+    AssociationFeeIncludes Json? //Possibly Null Array
+    HMS_InsideCityLimits String?
+    OwnershipType String?
+    Appliances Json? //Possibly Null Array
+    RoadResponsibility Json? //Possibly Null Array
+    BuilderModel String?
+    AssociationAmenities Json? //Possibly Null Array
+    CoListAgentFullName String?
+    CoListAgentMlsId String?
+    CoListOfficeName String?
+    CoListOfficePhone String?
+    YearBuilt Int?
+    Flooring Json? //Possibly Null Array
+    Possession Json? //Possibly Null Array
+    AssociationFeeFrequency String?
+    HMS_WarrantyDescription String?
+    InteriorFeatures Json? //Possibly Null Array
+    PatioAndPorchFeatures Json? //Possibly Null Array
+    RoomsTotal Int?
+    HighSchool String?
+    MiddleOrJuniorSchool String?
+    ArchitecturalStyle Json? //Possibly Null Array
+    BuilderName String?
+    ElementarySchool String?
+    FireplaceFeatures Json? //Possibly Null Array
+    LaundryFeatures Json? //Possibly Null Array
+    LotFeatures Json? //Possibly Null Array
+    PropertyCondition Json? //Possibly Null Array
+    FireplacesTotal Int?
+    AboveGradeFinishedArea Int?
+    AboveGradeFinishedAreaUnits String?
+    BelowGradeFinishedArea Int?
+    BelowGradeFinishedAreaUnits String?
+    GarageSpaces Int?
+    Basement Json? //Possibly Null Array
+    BasementYN Boolean?
+    BathroomsFull Int?
+    BathroomsHalf Int?
+    BedroomsTotal Int?
+    Cooling Json? //Possibly Null Array
+    CoolingYN Boolean?
+    FireplaceYN Boolean?
+    GarageYN Boolean?
+    HMS_BathroomsTotalDecimal String?
+    HMS_ExclusionsYN String?
+    HMS_FloorPlanFeatures String?
+    Heating Json? //Possibly Null Array
+    LivingArea Int?
+    Ownership String?
+    Roof Json? //Possibly Null Array
+    LotSizeArea Float?
+    LotSizeSquareFeet Float?
+    ParkingFeatures Json? // will potentially be null.. have to work this out
+    LotSizeUnits String?
+    HMS_AgeDescription String?
+    AssociationFee Int?
+    HMS_LegalDescription String?
+    SubAgencyCompensationType String?
+    HMS_MaintenanceProvidedYN String? //array, grab index 0
+    HighSchoolDistrict String?
+    Sewer String? //array, grab index 0
+    SubdivisionName String?
+    WaterSource String? //this comes in as an array, grab index 0
+    Directions String?
+    StreetNumber String?
+    HMS_InFloodPlain String?
+    HMS_TaxTotalAmount String?
+    PropertySubType String?
+    odataid String?
+    BuyerAgencyCompensation String?
+    BuyerAgencyCompensationType String?
+    City String?
+    CountyOrParish String?
+    InternetAddressDisplayYN Boolean?
+    InternetEntireListingDisplayYN Boolean?
+    ListAgentDirectPhone String?
+    ListAgentFullName String?
+    ListAgentKey String?
+    ListAgentMlsId String?
+    ListOfficeKey String?
+    ListOfficeMlsId String?
+    ListOfficeName String?
+    ListOfficePhone String?
+    ListPrice Int?
+    ListingAgreement String?
+    ListingContractDate String?
+    ListingKey String?
+    ListingTerms Json?
+    MLSAreaMajor String?
+    MlgCanUse Json?
+    MlgCanView Boolean?
+    MlsStatus String?
+    ModificationTimestamp String?
+    OriginatingSystemName String?
+    ParcelNumber String?
+    PhotosChangeTimestamp String?
+    PhotosCount Int?
+    PostalCode String?
+    PropertyType String?
+    PublicRemarks String?
+    StandardStatus String?
+    StateOrProvince String?
+    StreetName String?
+    StreetSuffix String?
+    SubAgencyCompensation String?
 }
 
-// NEW KEYS
-// HAVE TO GO THROUGH ALL OF THESE AND FIND CORRECT TYPES FOR EACH~!
-Utilities
-HMS_SaleOptions
-PossibleUse
-GreenEnergyEfficient
-LotSizeDimensions
-Zoning
-RoadSurfaceType
-VirtualTourURLUnbranded
-WindowFeatures
-HMS_Telecom
-SecurityFeatures
-AssociationFeeIncludes
-HMS_InsideCityLimits
-OwnershipType
-Appliances
-RoadResponsibility
-BuilderModel
-AssociationAmenities
-CoListAgentFullName
-CoListAgentKey
-CoListAgentMlsId
-CoListOfficeKey
-CoListOfficeMlsId
-CoListOfficeName
-CoListOfficePhone
-StreetDirPrefix
-YearBuilt
-Flooring
-HMS_EstimatedCompletionDays
-HMS_OtherRoomFeatures
-Possession
-AssociationFeeFrequency
-HMS_WarrantyDescription
-InteriorFeatures
-PatioAndPorchFeatures
-RoomsTotal
-HighSchool
-MiddleOrJuniorSchool
-ArchitecturalStyle
-HMS_InstallationRFactorCeiling
-HMS_InstallationRFactorWall
-BuilderName
-ElementarySchool
-FireplaceFeatures
-LaundryFeatures
-LotFeatures
-PropertyCondition
-HMS_DiningAreaFeatures
-FireplacesTotal
-AboveGradeFinishedArea
-AboveGradeFinishedAreaUnits
-BelowGradeFinishedArea
-BelowGradeFinishedAreaUnits
-GarageSpaces
-Basement
-BasementYN
-BathroomsFull
-BathroomsHalf
-BedroomsTotal
-ConstructionMaterials
-Cooling
-CoolingYN
-FireplaceYN
-GarageYN
-HMS_BathroomsTotalDecimal
-HMS_ExclusionsYN
-HMS_FloorPlanFeatures
-Heating
-LivingArea
-Ownership
-Roof
-LotSizeArea
-LotSizeSquareFeet
-ParkingFeatures
-LotSizeUnits
-HMS_AgeDescription
-AssociationFee
-HMS_LegalDescription
-SubAgencyCompensationType
-HMS_MaintenanceProvidedYN
-HighSchoolDistrict
-Sewer
-SubdivisionName
-WaterSource
-Directions
-StreetNumber
-HMS_InFloodPlain
-HMS_TaxTotalAmount
-PropertySubType
-@odata.id
-BuyerAgencyCompensation
-BuyerAgencyCompensationType
-City
-CountyOrParish
-InternetAddressDisplayYN
-InternetEntireListingDisplayYN
-ListAgentDirectPhone
-ListAgentFullName
-ListAgentKey
-ListAgentMlsId
-ListOfficeKey
-ListOfficeMlsId
-ListOfficeName
-ListOfficePhone
-ListPrice
-ListingAgreement
-ListingContractDate
-ListingId
-ListingKey
-ListingTerms
-MLSAreaMajor
-MlgCanUse
-MlgCanView
-MlsStatus
-ModificationTimestamp
-OriginatingSystemName
-ParcelNumber
-PhotosChangeTimestamp
-PhotosCount
-PostalCode
-PropertyType
-PublicRemarks
-StandardStatus
-StateOrProvince
-StreetName
-StreetSuffix
-SubAgencyCompensation
+
+// Original model Propery, from free API
+
+//model Prop {
+//  PropertyId String @id //QueryApi has this as a string. Will have to parse to int.
+//  ApiUpdateAt String?
+//  Tags String[]
+//  PermLink String?
+//  Status String?
+//  ListDate String?
+//  Branding String?
+//  Photos String[]
+//  ListPrice Int?
+//  YearBuilt Int?
+//  BathsFull Int?
+//  BathsHalf Int?
+//  Baths Int?
+//  LotSqft Int?
+//  Sqft Int?
+//  Garage Int?
+//  Stories Int?
+//  Beds Int?
+//  PropertyType String?
+//  ListingId String?
+//  PostalCode String?
+//  State String?
+//  Longitude Float?
+//  Latitude Float?
+//  City String?
+//  StateCode String?
+//  Address String?  //Line in ApiQuery
+//  County String?
+//}
+
 

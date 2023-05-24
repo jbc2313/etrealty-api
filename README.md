@@ -43,6 +43,9 @@
 - get only the keys of the json's key-value pairs.
 `jq ".value[1] | keys_unsorted" >file< `
 
+- look at a specfic key/value
+`jq ".value[] | {HMS_MaintenanceProvidedYN}" 50results-MLSGRID-initial.json`
+
 - sort the keys by frequencey of occurence
 `sort <file> | uniq -c | sort -n`
 
