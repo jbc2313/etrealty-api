@@ -3,7 +3,10 @@ import axios from "axios";
 const dotenv = require('dotenv');
 dotenv.config()
 
-
+// this is the function that fetches 'all' the propertys from MLSGRID,
+// this function should be used for initial database fill,
+// and for routine updating of db info when the last modified date changes,
+// the max returned is 500,
 
 
 const options = {

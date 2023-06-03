@@ -34,12 +34,15 @@ app.get('/', (req: Request, res: Response, next: NextFunction) => {
 });
 
 app.get('/test', (req: Request, res: Response, next: NextFunction) => {
-    // this tests fetch of props
+
+    // this tests fetch of props from mlsgrid
     const test = async () => {
         const data = await runTest();
         res.json(data);
     }
     test();
+
+
     //this tests feeding db with props
     //runFeed(); // this actually adds property's to db
     

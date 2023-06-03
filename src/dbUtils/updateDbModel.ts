@@ -1,6 +1,10 @@
 import prisma from "./prismaClient";
 import { checkProp } from "./checkApiProperty";
 
+
+// this has not been updated for MLS GRID
+
+
 export async function updateInfo(dbArr: any, apiArr: any, dbList: any) {
     console.log("LIST OF IDS NEED UPDATED");
     console.log(dbList);

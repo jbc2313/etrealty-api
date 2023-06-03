@@ -1,6 +1,10 @@
 import prisma from "./prismaClient"
 
 
+// this has not been updated for MLS GRID
+
+
+
 export const createProperty = (p: any) => {
 //these 2 function deal with Prisma Model not allowing null in these 2 rows
 // I moved this to a different place

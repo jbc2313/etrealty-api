@@ -1,7 +1,10 @@
 import { createProperty } from "../dbUtils/createSingleModel";
 import { findProperty } from "../dbUtils/findSingleModel";
 import { checkProp } from "../dbUtils/checkApiProperty";
-//this needs to be a cron job that runs 2 or 3 times a day.
+
+// THIS has not been updated for MLS GRID
+
+// this needs to be a cron job that runs 2 or 3 times a day.
 //needs to pull in propertys, check in the db to see if
 //they are already in it. if inside the db check the last update
 //if data has changed then update the model with new info

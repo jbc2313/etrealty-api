@@ -1,5 +1,7 @@
 import prisma from "./prismaClient";
 
+// This has not been updated for MLS GRID
+
 export async function unlistModel(list: any) {
     console.log("**DB MODEL UNLISTED**");
     console.log("unlist list");

@@ -1,6 +1,9 @@
 import { describe, expect, test, beforeAll } from '@jest/globals'
 import prisma from "../dbUtils/prismaClient"
 
+// this has not been updated for MLS GRID
+
+
 beforeAll(() => {
     //setup enviroment for test here
 })

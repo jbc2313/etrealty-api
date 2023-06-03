@@ -5,7 +5,7 @@ const cron = require('node-cron');
 // const cronitor = require('cronitor')(process.env.CRONITOR_KEY)
 import mainCronJob from './feedandupdate';
 
-
+// THIS has not been updated for MLS GRID
 
 export function cronJob() {
 

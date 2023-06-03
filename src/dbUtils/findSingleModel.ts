@@ -1,5 +1,10 @@
 import prisma from "./prismaClient";
 
+
+// this has not been updated for MLS GRID
+
+
+
 // p must be the PropertyId
 export const findProperty = async (p: any) => {
     

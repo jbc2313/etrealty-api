@@ -1,5 +1,7 @@
 import { getPropertys } from "../utils/fetchPropertys";
 
+// this has not been updated for MLS GRID
+
 export const runTest = async () => {
     const homedata = getPropertys()
     .then(data => {

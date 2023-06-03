@@ -3,6 +3,12 @@ import { getPropertys } from "../utils/fetchPropertys";
 import { updateInfo } from "./updateDbModel";
 import { unlistModel } from "./unlistDbModel";
 
+
+
+// this has not been updated for MLS GRID
+
+
+
 // This function will check the models in the db against the Home API
 // We will be checking if the home sold, if it sold we will update.
 

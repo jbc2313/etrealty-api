@@ -1,6 +1,8 @@
 import { checkProp } from '../dbUtils/checkApiProperty' 
 import { getPropertys } from '../utils/fetchPropertys'
 
+// THIS has not been updated for MLS GRID
+//
 // TEST property against DB straight from MLS api
 
 
