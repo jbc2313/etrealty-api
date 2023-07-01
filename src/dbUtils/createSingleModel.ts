@@ -2,10 +2,9 @@ import prisma from "./prismaClient"
 
 // i have updated this for MLSGrid data, needs to be double checked
 
-export const createProperty = (p: any) => {
+export const createProperty = async (p: any) => {
 
-
-//create the propertys
+//create the property
     prisma.property.create({
         data: {
             ListingId: p.ListingId,
@@ -127,7 +126,7 @@ export const createProperty = (p: any) => {
             SubAgencyCompensation: p.SubAgencyCompensation,
         }
     })
-    .then(res => {
+        .then((res: any) => {
         console.log("Property was created in Db.")
     })
 

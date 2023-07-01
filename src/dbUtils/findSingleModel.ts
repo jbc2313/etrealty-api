@@ -1,7 +1,8 @@
 import prisma from "./prismaClient";
 
 
-// this has not been updated for MLS GRID
+// this HAS been updated for MLS GRID
+// Still needs tested
 
 
 
@@ -10,8 +11,8 @@ export const findProperty = async (p: any) => {
     
     const result = await prisma.property.findFirst({
         where: {
-            PropertyId: {
-                equals: p.property_id
+            ListingId: {
+                equals: p.ListingId
             }
         }
     })

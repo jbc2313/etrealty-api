@@ -1,6 +1,8 @@
 import { createProperty } from "../dbUtils/createSingleModel";
 import { findProperty } from "../dbUtils/findSingleModel";
-import { checkProp } from "../dbUtils/checkApiProperty";
+
+// probably dont need this anymore, since mlsgrid is better api
+//import { checkProp } from "../dbUtils/checkApiProperty";
 
 // THIS has not been updated for MLS GRID
 
@@ -12,10 +14,6 @@ import { checkProp } from "../dbUtils/checkApiProperty";
 //api calls to db from clientside will be in seperate file
 
 // first get everything working then implement the cron job
-
-let props
-let totProps
-
 
 export const feed = async (propertys: any) => {
     props = propertys.apiProps;
