@@ -6,6 +6,10 @@ import { cronJob } from './utils/nodeCron';
 //----------testing--------------
 
 import { runTest } from './__tests__/testFetch';
+
+
+
+// old tests
 // import { runFeed } from './__tests__/testDbCrud';
 // import { testData } from './__tests__/testApiDataReturn';
 // import { findProperty } from './dbUtils/findSingleModel';
@@ -36,12 +40,15 @@ app.get('/', (req: Request, res: Response, next: NextFunction) => {
 app.get('/test', (req: Request, res: Response, next: NextFunction) => {
 
     // this tests fetch of props from mlsgrid
-    const test = async () => {
-        const data = await runTest();
-        res.json(data);
-    }
-    test();
+    //const test = async () => {
+    //    const data = await runTest();
+    //    res.json(data);
+   // }
+   // test();
 
+    const test1 = async () => {
+        const info = await
+    }
 
     //this tests feeding db with props
     //runFeed(); // this actually adds property's to db

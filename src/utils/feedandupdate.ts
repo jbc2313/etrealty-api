@@ -1,14 +1,20 @@
-import { checkSold } from '../dbUtils/checkDbModelsSold';
+//import { checkSold } from '../dbUtils/checkDbModelsSold';
+
 import { feed } from '../utils/feedDb';
 import { getPropertys } from "../utils/fetchPropertys";
 import { Property } from './property-type';
+import { coerceProperty } from './coercePropertyType';
 
 // cronitor is used to watch this and send updates/emails if this goes down/stops working
 //
 // This has not been updated for MLS GRID - Currently in progress
 //
-// THIS IS THE MAIN LOOP THAT FEEDS AND CHECKS DB FOR UPDATES TO OLD DATA
+// THIS IS THE MAIN LOOP THAT FEEDS, AND CHECKS DB FOR UPDATES TO OLD DATA
 //
+// MAIN FUNCTION
+//
+
+
 const dotenv = require('dotenv');
 dotenv.config()
 const cronitor = require('cronitor')(process.env.CRONITOR_KEY)
