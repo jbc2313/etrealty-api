@@ -1,4 +1,4 @@
-import { Property } from './property-type';
+import { Property } from '../utils//property-type';
 import { prepApiData } from '../utils/prepareData';
 
 export async function test_prep_data () {
