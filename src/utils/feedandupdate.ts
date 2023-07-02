@@ -1,9 +1,13 @@
 //import { checkSold } from '../dbUtils/checkDbModelsSold';
 
 import { feed } from '../utils/feedDb';
-import { getPropertys } from "../utils/fetchPropertys";
 import { Property } from './property-type';
-import { coerceProperty } from './coercePropertyType';
+
+// wrap these two into one function
+//import { getPropertys } from "../utils/fetchPropertys";
+//import { coerceProperty } from './coercePropertyType';
+
+import { prepApiData } from './prepareData';
 
 // cronitor is used to watch this and send updates/emails if this goes down/stops working
 //
@@ -20,12 +24,20 @@ dotenv.config()
 const cronitor = require('cronitor')(process.env.CRONITOR_KEY)
 
 let mainCronJob = cronitor.wrap('etRealty-dbupdate', async function() {
-    let data = await getPropertys();
-    // need to coerce data into right type here
-    let properties: Property[] = await data;
 
+    // going to wrap these 2 into its own function
+    //let data = await getPropertys();
+    // need to coerce data into right type here
+    // let properties: Property[] = await coerceProperty(data);
+
+
+    let propertyArray: Property[] = await prepApiData();
+
+
+    // need to update feed function to accept Property[] type
     feed(properties).then(resolved => {
-        checkSold(properties);
+        // dont think this is neccassarry anymore
+       // checkSold(properties);
     }).finally(()=>{
         
     })
