@@ -94,7 +94,7 @@ model Property {
     Sewer String? //array, grab index 0
     SubdivisionName String?
     WaterSource String? //this comes in as an array, grab index 0
-    Directions String?
+    Directions Json?
     StreetNumber String?
     HMS_InFloodPlain String?
     HMS_TaxTotalAmount String?
@@ -130,7 +130,7 @@ model Property {
     PhotosCount Int?
     PostalCode String?
     PropertyType String?
-    PublicRemarks String?
+    PublicRemarks Json?
     StandardStatus String?
     StateOrProvince String?
     StreetName String?

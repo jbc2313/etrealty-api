@@ -48,6 +48,7 @@ app.get('/test', (req: Request, res: Response, next: NextFunction) => {
 
     //this test checks to see if api data is coerced into Property Type
     const test1 = async () => {
+        console.log('running test1');
         const info = await test_prep_data();
         res.json(info);
     }

@@ -1,69 +1,69 @@
 export type Property = {
     ListingId: String //Prisma @id
-    Utilities: JSON
+    Utilities: String //JSON in Prisma
     HMS_SaleOptions: String
-    PossibleUse: JSON
-    GreenEnergyEfficient: JSON
+    PossibleUse: String //JSON in Prisma
+    GreenEnergyEfficient: String //JSON in Prisma
     LotSizeDimensions: String
     Zoning: String
-    RoadSurfaceType: JSON
-    VirtualTourURLUnbranded: JSON
-    WindowFeatures: JSON
+    RoadSurfaceType: String //JSON in Prisma
+    VirtualTourURLUnbranded: String //JSON in Prisma
+    WindowFeatures: String //JSON in Prisma
     HMS_Telecom: String
-    SecurityFeatures: JSON
-    AssociationFeeIncludes: JSON
+    SecurityFeatures: String //JSON in Prisma
+    AssociationFeeIncludes: String //JSON in Prisma
     HMS_InsideCityLimits: String
     OwnershipType: String
-    Appliances: JSON
-    RoadResponsibility: JSON
+    Appliances: String //JSON in Prisma
+    RoadResponsibility: String //JSON in Prisma
     BuilderModel: String
-    AssociationAmenities: JSON
+    AssociationAmenities: String //JSON in Prisma
     CoListAgentFullName: String
     CoListAgentMlsId: String
     CoListOfficeName: String
     CoListOfficePhone: String
     YearBuilt: Number
-    Flooring: JSON
-    Possession: JSON
+    Flooring: String //JSON in Prisma
+    Possession: String //JSON in Prisma
     AssociationFeeFrequency: String
     HMS_WarrantyDescription: String
-    InteriorFeatures: JSON
-    PatioAndPorchFeatures: JSON
+    InteriorFeatures: String //JSON in Prisma
+    PatioAndPorchFeatures: String //JSON in Prisma
     RoomsTotal: Number
     HighSchool: String
     MiddleOrJuniorSchool: String
-    ArchitecturalStyle: JSON
+    ArchitecturalStyle: String //JSON in Prisma
     BuilderName: String
     ElementarySchool: String
-    FireplaceFeatures: JSON
-    LaundryFeatures: JSON
-    LotFeatures: JSON
-    PropertyCondition: JSON
+    FireplaceFeatures: String //JSON in Prisma
+    LaundryFeatures: String //JSON in Prisma
+    LotFeatures: String //JSON in Prisma
+    PropertyCondition: String //JSON in Prisma
     FireplacesTotal: Number
     AboveGradeFinishedArea: Number
     AboveGradeFinishedAreaUnits: String
     BelowGradeFinishedArea: Number
     BelowGradeFinishedAreaUnits: String
     GarageSpaces: Number
-    Basement: JSON
+    Basement: String //JSON in Prisma
     BasementYN: Boolean
     BathroomsFull: Number
     BathroomsHalf: Number
     BedroomsTotal: Number
-    Cooling: JSON
+    Cooling: String //JSON in Prisma
     CoolingYN: Boolean
     FireplaceYN: Boolean
     GarageYN: Boolean
     HMS_BathroomsTotalDecimal: String
     HMS_ExclusionsYN: String
     HMS_FloorPlanFeatures: String
-    Heating: JSON
+    Heating: String //JSON in Prisma
     LivingArea: Number
     Ownership: String
-    Roof: JSON
+    Roof: String //JSON in Prisma
     LotSizeArea: Number
     LotSizeSquareFeet: Number
-    ParkingFeatures: JSON
+    ParkingFeatures: String //JSON in Prisma
     LotSizeUnits: String
     HMS_AgeDescription: String
     AssociationFee: Number
@@ -74,7 +74,7 @@ export type Property = {
     Sewer: String //array, grab index 0
     SubdivisionName: String
     WaterSource: String //this comes in as an array, grab index 0
-    Directions: String
+    Directions: String  // JSON in Prisma
     StreetNumber: String
     HMS_InFloodPlain: String
     HMS_TaxTotalAmount: String
@@ -98,9 +98,9 @@ export type Property = {
     ListingAgreement: String
     ListingContractDate: String
     ListingKey: String
-    ListingTerms: JSON
+    ListingTerms: String //JSON in Prisma
     MLSAreaMajor: String
-    MlgCanUse: JSON
+    MlgCanUse: String //JSON in Prisma
     MlgCanView: Boolean
     MlsStatus: String
     ModificationTimestamp: String
@@ -110,7 +110,7 @@ export type Property = {
     PhotosCount: Number
     PostalCode: String
     PropertyType: String
-    PublicRemarks: String
+    PublicRemarks: String  //JSON in Prisma
     StandardStatus: String
     StateOrProvince: String
     StreetName: String
