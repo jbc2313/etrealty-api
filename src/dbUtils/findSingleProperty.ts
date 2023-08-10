@@ -21,10 +21,11 @@ export const findProperty = async (p: Property) => {
             }
         }
     }).then(res => {
-        console.log("res from db search",res)
         if(!res){
+            console.log("res from db search",res)
             return null;
        }else{
+            console.log("res from db search: FOUND")
             return res;
        }
     })

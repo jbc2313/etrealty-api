@@ -45,11 +45,14 @@ export const feed = async (PropertyArray: Property[]) => {
                         if(prop.ModificationTimestamp > dbprop.ModificationTimestamp){
                             // Timestamp is new from api, so db needs updated.
                             updateProperty(prop, dbprop).then((res:any)=>{
-                                console.log("property was updated in db"); 
+                                console.log(`dbproperty updated from previous timestamp of ${dbprop.ModificationTimestamp} to ${prop.ModificationTimestamp}`); 
                                 console.log(res);
                             })
                             
-                        };
+                        }else{
+                            // no update is needed at this time. 
+                            console.log("no update was needed at this time");
+                        }
                     };
                 }
             }else{
