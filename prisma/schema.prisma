@@ -3,7 +3,6 @@
 
 
 
-// DO NOT REGENERATE ie.. `prisma generate` until file is complete.
 
 generator client {
   provider = "prisma-client-js"
@@ -16,7 +15,6 @@ datasource db {
 
 
 
-// POSSIBLE NULL ARRAY FIX - USE Json? 
 //DProperty is a Database Property
 model DProperty {
     ListingId String @id

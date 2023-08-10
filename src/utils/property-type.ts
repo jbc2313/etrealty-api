@@ -1,120 +1,120 @@
 export type Property = {
-    ListingId: String //Prisma @id
-    Utilities: String //JSON in Prisma
-    HMS_SaleOptions: String
-    PossibleUse: String //JSON in Prisma
-    GreenEnergyEfficient: String //JSON in Prisma
-    LotSizeDimensions: String
-    Zoning: String
-    RoadSurfaceType: String //JSON in Prisma
-    VirtualTourURLUnbranded: String //JSON in Prisma
-    WindowFeatures: String //JSON in Prisma
-    HMS_Telecom: String
-    SecurityFeatures: String //JSON in Prisma
-    AssociationFeeIncludes: String //JSON in Prisma
-    HMS_InsideCityLimits: String
-    OwnershipType: String
-    Appliances: String //JSON in Prisma
-    RoadResponsibility: String //JSON in Prisma
-    BuilderModel: String
-    AssociationAmenities: String //JSON in Prisma
-    CoListAgentFullName: String
-    CoListAgentMlsId: String
-    CoListOfficeName: String
-    CoListOfficePhone: String
-    YearBuilt: Number
-    Flooring: String //JSON in Prisma
-    Possession: String //JSON in Prisma
-    AssociationFeeFrequency: String
-    HMS_WarrantyDescription: String
-    InteriorFeatures: String //JSON in Prisma
-    PatioAndPorchFeatures: String //JSON in Prisma
-    RoomsTotal: Number
-    HighSchool: String
-    MiddleOrJuniorSchool: String
-    ArchitecturalStyle: String //JSON in Prisma
-    BuilderName: String
-    ElementarySchool: String
-    FireplaceFeatures: String //JSON in Prisma
-    LaundryFeatures: String //JSON in Prisma
-    LotFeatures: String //JSON in Prisma
-    PropertyCondition: String //JSON in Prisma
-    FireplacesTotal: Number
-    AboveGradeFinishedArea: Number
-    AboveGradeFinishedAreaUnits: String
-    BelowGradeFinishedArea: Number
-    BelowGradeFinishedAreaUnits: String
-    GarageSpaces: Number
-    Basement: String //JSON in Prisma
-    BasementYN: Boolean
-    BathroomsFull: Number
-    BathroomsHalf: Number
-    BedroomsTotal: Number
-    Cooling: String //JSON in Prisma
-    CoolingYN: Boolean
-    FireplaceYN: Boolean
-    GarageYN: Boolean
-    HMS_BathroomsTotalDecimal: String
-    HMS_ExclusionsYN: String
-    HMS_FloorPlanFeatures: String
-    Heating: String //JSON in Prisma
-    LivingArea: Number
-    Ownership: String
-    Roof: String //JSON in Prisma
-    LotSizeArea: Number
-    LotSizeSquareFeet: Number
-    ParkingFeatures: String //JSON in Prisma
-    LotSizeUnits: String
-    HMS_AgeDescription: String
-    AssociationFee: Number
-    HMS_LegalDescription: String
-    SubAgencyCompensationType: String
-    HMS_MaintenanceProvidedYN: String //array, grab index 0
-    HighSchoolDistrict: String
-    Sewer: String //array, grab index 0
-    SubdivisionName: String
-    WaterSource: String //this comes in as an array, grab index 0
-    Directions: String  // JSON in Prisma
-    StreetNumber: String
-    HMS_InFloodPlain: String
-    HMS_TaxTotalAmount: String
-    PropertySubType: String
-    odataid: String
-    BuyerAgencyCompensation: String
-    BuyerAgencyCompensationType: String
-    City: String
-    CountyOrParish: String
-    InternetAddressDisplayYN: Boolean
-    InternetEntireListingDisplayYN: Boolean
-    ListAgentDirectPhone: String
-    ListAgentFullName: String
-    ListAgentKey: String
-    ListAgentMlsId: String
-    ListOfficeKey: String
-    ListOfficeMlsId: String
-    ListOfficeName: String
-    ListOfficePhone: String
-    ListPrice: Number
-    ListingAgreement: String
-    ListingContractDate: String
-    ListingKey: String
-    ListingTerms: String //JSON in Prisma
-    MLSAreaMajor: String
-    MlgCanUse: String //JSON in Prisma
-    MlgCanView: Boolean
-    MlsStatus: String
-    ModificationTimestamp: String
-    OriginatingSystemName: String
-    ParcelNumber: String
-    PhotosChangeTimestamp: String
-    PhotosCount: Number
-    PostalCode: String
-    PropertyType: String
-    PublicRemarks: String  //JSON in Prisma
-    StandardStatus: String
-    StateOrProvince: String
-    StreetName: String
-    StreetSuffix: String
-    SubAgencyCompensation: String
+    ListingId: string //Prisma @id
+    Utilities: string //JSON in Prisma
+    HMS_SaleOptions: string
+    PossibleUse: string //JSON in Prisma
+    GreenEnergyEfficient: string //JSON in Prisma
+    LotSizeDimensions: string
+    Zoning: string
+    RoadSurfaceType: string //JSON in Prisma
+    VirtualTourURLUnbranded: string //JSON in Prisma
+    WindowFeatures: string //JSON in Prisma
+    HMS_Telecom: string
+    SecurityFeatures: string //JSON in Prisma
+    AssociationFeeIncludes: string //JSON in Prisma
+    HMS_InsideCityLimits: string
+    OwnershipType: string
+    Appliances: string //JSON in Prisma
+    RoadResponsibility: string //JSON in Prisma
+    BuilderModel: string
+    AssociationAmenities: string //JSON in Prisma
+    CoListAgentFullName: string
+    CoListAgentMlsId: string
+    CoListOfficeName: string
+    CoListOfficePhone: string
+    YearBuilt: number
+    Flooring: string //JSON in Prisma
+    Possession: string //JSON in Prisma
+    AssociationFeeFrequency: string
+    HMS_WarrantyDescription: string
+    InteriorFeatures: string //JSON in Prisma
+    PatioAndPorchFeatures: string //JSON in Prisma
+    RoomsTotal:number
+    HighSchool: string
+    MiddleOrJuniorSchool: string
+    ArchitecturalStyle: string //JSON in Prisma
+    BuilderName: string
+    ElementarySchool: string
+    FireplaceFeatures: string //JSON in Prisma
+    LaundryFeatures: string //JSON in Prisma
+    LotFeatures: string //JSON in Prisma
+    PropertyCondition: string //JSON in Prisma
+    FireplacesTotal: number
+    AboveGradeFinishedArea: number
+    AboveGradeFinishedAreaUnits: string
+    BelowGradeFinishedArea: number
+    BelowGradeFinishedAreaUnits: string
+    GarageSpaces:number
+    Basement: string //JSON in Prisma
+    BasementYN: boolean
+    BathroomsFull: number
+    BathroomsHalf: number
+    BedroomsTotal: number
+    Cooling: string //JSON in Prisma
+    CoolingYN: boolean
+    FireplaceYN: boolean
+    GarageYN: boolean
+    HMS_BathroomsTotalDecimal: string
+    HMS_ExclusionsYN: string
+    HMS_FloorPlanFeatures: string
+    Heating: string //JSON in Prisma
+    LivingArea:number
+    Ownership: string
+    Roof: string //JSON in Prisma
+    LotSizeArea: number
+    LotSizeSquareFeet:number
+    ParkingFeatures: string //JSON in Prisma
+    LotSizeUnits: string
+    HMS_AgeDescription: string
+    AssociationFee: number
+    HMS_LegalDescription: string
+    SubAgencyCompensationType: string
+    HMS_MaintenanceProvidedYN: string //array, grab index 0
+    HighSchoolDistrict: string
+    Sewer: string //array, grab index 0
+    SubdivisionName: string
+    WaterSource: string //this comes in as an array, grab index 0
+    Directions: string  // JSON in Prisma
+    StreetNumber: string
+    HMS_InFloodPlain: string
+    HMS_TaxTotalAmount: string
+    PropertySubType: string
+    odataid: string
+    BuyerAgencyCompensation: string
+    BuyerAgencyCompensationType: string
+    City: string
+    CountyOrParish: string
+    InternetAddressDisplayYN: boolean
+    InternetEntireListingDisplayYN: boolean
+    ListAgentDirectPhone: string
+    ListAgentFullName: string
+    ListAgentKey: string
+    ListAgentMlsId: string
+    ListOfficeKey: string
+    ListOfficeMlsId: string
+    ListOfficeName: string
+    ListOfficePhone: string
+    ListPrice: number
+    ListingAgreement: string
+    ListingContractDate: string
+    ListingKey: string
+    ListingTerms: string //JSON in Prisma
+    MLSAreaMajor: string
+    MlgCanUse: string //JSON in Prisma
+    MlgCanView: boolean
+    MlsStatus: string
+    ModificationTimestamp: string
+    OriginatingSystemName: string
+    ParcelNumber: string
+    PhotosChangeTimestamp: string
+    PhotosCount: number
+    PostalCode: string
+    PropertyType: string
+    PublicRemarks: string  //JSON in Prisma
+    StandardStatus: string
+    StateOrProvince: string
+    StreetName: string
+    StreetSuffix: string
+    SubAgencyCompensation: string
 
 }

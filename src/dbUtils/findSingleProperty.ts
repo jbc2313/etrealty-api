@@ -12,16 +12,15 @@ import { Property } from '../utils/property-type';
 
 
 // p must be the PropertyId
-export const findProperty = async (p: any) => {
+export const findProperty = async (p: Property) => {
     
-    const result = await prisma.property.findFirst({
+    const result = prisma.dProperty.findFirst({
         where: {
             ListingId: {
                 equals: p.ListingId
             }
         }
-    })
-    .then(res => {
+    }).then(res => {
         console.log("res from db search",res)
         if(!res){
             return null;

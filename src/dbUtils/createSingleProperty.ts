@@ -10,7 +10,7 @@ import { Property } from '../utils/property-type';
 export const createProperty = async (p: Property) => {
 
 //create the property
-    prisma.property.create({
+    prisma.dProperty.create({
         data: {
             ListingId: p.ListingId,
             Utilities: p.Utilities,  // Posibbly Null Array
@@ -96,7 +96,7 @@ export const createProperty = async (p: Property) => {
             BuyerAgencyCompensation: p.BuyerAgencyCompensation,
             BuyerAgencyCompensationType: p.BuyerAgencyCompensationType,
             City: p.City,
-            CountyOrParish: p.CountryOrParish,
+            CountyOrParish: p.CountyOrParish,
             InternetAddressDisplayYN: p.InternetAddressDisplayYN,
             InternetEntireListingDisplayYN: p.InternetEntireListingDisplayYN,
             ListAgentDirectPhone: p.ListAgentDirectPhone,

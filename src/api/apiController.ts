@@ -1,20 +1,22 @@
 import { Request, Response } from 'express'
 import prisma from '../dbUtils/prismaClient'
-import { findProperty } from '../dbUtils/findSingleModel' 
 
 export const getAllProperty = (req: Request, res: Response) => {
     console.log('getAllProperty Route Pinged.')
-    prisma.property.findMany()
+    prisma.dProperty.findMany()
     .then(props => {
         res.json({msg: "All Properties returned", properties: props})
     })
 }
 
+
+// THIS WILL NEED TO BE DOUBLE CHECKED and UPDATED FOR MLS GRID
+// MlsStatus needs to be double checked to see what is standard values
 export const getForSaleProperty = (req: Request, res: Response) => {
     console.log('getForSaleProperty Route Pinged.')
-    prisma.property.findMany({
+    prisma.dProperty.findMany({
        where: {
-            Status: {
+            MlsStatus: {
                not: "Unlisted",
             }
        }
@@ -29,9 +31,9 @@ export const getForSaleProperty = (req: Request, res: Response) => {
 export const getSingleProperty = (req: Request, res: Response) => {
     console.log('getSingleProperty Route Pinged.')
     console.log(req.params.id)
-    prisma.property.findFirst({
+    prisma.dProperty.findFirst({
         where: {
-            PropertyId: {
+            ListingId: {
                 equals: req.params.id
             }
         }
@@ -51,7 +53,7 @@ export const getSingleProperty = (req: Request, res: Response) => {
 
 export const getTotalProperty = (req: Request, res: Response) => {
     console.log('getTotalProperty route pinged.')
-    prisma.property.count()
+    prisma.dProperty.count()
     .then(tot => {
         res.json({ msg: "Total number of properties returned", total: tot })
     })

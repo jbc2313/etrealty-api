@@ -2,7 +2,7 @@
 import { Property } from './property-type';
 
 // creates the property in the db through prisma
-import { createProperty } from "../dbUtils/createSingleProperty";
+import { createProperty } from '../dbUtils/createSingleProperty';
 
 // checks db for property, if property is there it updates with new info if needed.
 // will update based on last update timestap
@@ -12,7 +12,7 @@ import { findProperty } from "../dbUtils/findSingleProperty";
 
 //need to create the update function
 // update function will take apiprop and dbprop to compare and update info based on timestap
-
+import { updateProperty } from '../dbUtils/updateSingleProperty';
 
 
 // IS updated for MLS GRID
@@ -30,44 +30,38 @@ export const feed = async (PropertyArray: Property[]) => {
    
 // NEW CODE -----------------------------------------------------------------------------------
     
-
+    
     // see if props are already in Db, and handle accordingly
-    //PropertyArray.forEach((prop: Property)=> {
-    // if property is found check check timestamp to see if it needs updated(compare to new info from api)
-    //   let dbprop = await findProperty(prop).then(res => {
-    //      if(res){
-    //          found = true;
-    //          return res;
-    //      }
-    //   })
-    //   if(found){
-    //      updateDB(dbprop, prop); 
-    //
-    //   }
-    //});
-
-    // is already in db will go here
-
-
-//OLD CODE ----------------------------------------------------------------------------
-
-    // if not in db
-    //
     PropertyArray.forEach((prop: Property)=> {
-        let status; 
-        createProperty(prop).then(resolved => {
-            console.log(resolved);
-            status = resolved;
+    // if property is found check check timestamp to see if it needs updated(compare to new info from api)
+        findProperty(prop).then(res => {
+            if(res){
+                //dbprop was found
+                let dbprop = res;
+                
+                //check if dbprop needs updated and typescript null checking
+                if(dbprop != null){
+                    if(dbprop.ModificationTimestamp != null){
+                        if(prop.ModificationTimestamp > dbprop.ModificationTimestamp){
+                            // Timestamp is new from api, so db needs updated.
+                            updateProperty(prop, dbprop).then((res:any)=>{
+                                console.log("property was updated in db"); 
+                                console.log(res);
+                            })
+                            
+                        };
+                    };
+                }
+            }else{
+                // not found in DB already, create Property in DB
+                createProperty(prop).then((res: any)=>{
+                    // result of creation
+                    console.log(res);
+                })
+            }
         })
-        console.log("property already in db")
-       
-
-        return status;
-        // need to check last updated date in db with newly fetched property.
-        // if changed need to update that property in db
-
-        // THIS PROBABLY NEEDS TO BE AN ANSYNC FUNCTION OR PROMISE
-        // REALY MESSED UP HERE, I MADE THIS FUNCTION USE ALL API DATA INSTEAD OF SINGLE PROP 
-        //checkProp();
     });
+
+    
+
 };
