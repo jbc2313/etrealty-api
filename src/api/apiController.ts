@@ -16,9 +16,7 @@ export const getForSaleProperty = (req: Request, res: Response) => {
     console.log('getForSaleProperty Route Pinged.')
     prisma.dProperty.findMany({
        where: {
-            MlsStatus: {
-               not: "Unlisted",
-            }
+            MlsStatus: "Active" 
        }
     }).then(props => {
         res.json({
