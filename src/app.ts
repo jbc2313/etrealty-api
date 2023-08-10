@@ -7,7 +7,7 @@ import { cronJob } from './utils/nodeCron';
 
 import { test_prep_data } from './__tests__/test_prep_data';
 import { test_add_db } from './__tests__/test_add_db';
-
+import { test_feed_one_property } from './__tests__/test_feed_one_property';
 
 //-----------endtesting-----------------
 
@@ -39,9 +39,13 @@ app.get('/test', (req: Request, res: Response, next: NextFunction) => {
         console.log('running test1');
         const info = await test_prep_data();
         //res.json(info);
-        
-        const addtodb = await test_add_db(info);
-        res.json(addtodb);
+
+        // this is to add one property and create the db
+        const addonetodb = await test_feed_one_property(info);
+        res.json(addonetodb);
+
+//        const addtodb = await test_add_db(info);
+//        res.json(addtodb);
 
     }
     test1();
