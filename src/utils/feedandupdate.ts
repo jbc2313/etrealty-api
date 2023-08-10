@@ -21,15 +21,9 @@ import { prepApiData } from './prepareData';
 
 const dotenv = require('dotenv');
 dotenv.config()
-const cronitor = require('cronitor')(process.env.CRONITOR_KEY)
+//const cronitor = require('cronitor')(process.env.CRONITOR_KEY)
 
 let mainCronJob = cronitor.wrap('etRealty-dbupdate', async function() {
-
-    // going to wrap these 2 into its own function
-    //let data = await getPropertys();
-    // need to coerce data into right type here
-    // let properties: Property[] = await coerceProperty(data);
-
 
     let propertyArray: Property[] = await prepApiData();
 

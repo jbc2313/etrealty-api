@@ -1,8 +1,13 @@
 import prisma from "./prismaClient"
 
+
+import { DProperty } from "@prisma/client";
+
+import { Property } from '../utils/property-type';
+
 // i have updated this for MLSGrid data, needs to be double checked
 
-export const createProperty = async (p: any) => {
+export const createProperty = async (p: Property) => {
 
 //create the property
     prisma.property.create({

@@ -17,8 +17,8 @@ datasource db {
 
 
 // POSSIBLE NULL ARRAY FIX - USE Json? 
-
-model Property {
+//DProperty is a Database Property
+model DProperty {
     ListingId String @id
     Utilities Json? // Posibbly Null Array
     HMS_SaleOptions String?

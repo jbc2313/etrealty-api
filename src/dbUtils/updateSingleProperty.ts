@@ -1,13 +1,16 @@
+// New version of updateDbmodel.ts
+
+
+import { Property } from '../utils/property-type';
+import { Property } from "@prisma/client";
 import prisma from "./prismaClient";
 
 
-// this HAS been updated for MLS GRID
 // Still needs tested
 
 
 
-// p must be the PropertyId
-export const findProperty = async (p: any) => {
+export const findProperty = async (Property: Property) => {
     
     const result = await prisma.property.findFirst({
         where: {
@@ -26,7 +29,6 @@ export const findProperty = async (p: any) => {
     })
     return result
 }
-
 
 
 

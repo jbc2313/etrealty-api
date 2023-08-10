@@ -1,3 +1,6 @@
+// OLD FILE DO NOT USE
+
+
 import prisma from "./prismaClient";
 import { checkProp } from "./checkApiProperty";
 

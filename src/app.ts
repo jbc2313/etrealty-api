@@ -5,8 +5,8 @@ import { cronJob } from './utils/nodeCron';
 
 //----------testing--------------
 
-import { runTest } from './__tests__/testFetch';
 import { test_prep_data } from './__tests__/test_prep_data';
+import { test_add_db } from './__tests__/test_add_db';
 
 
 // old tests
@@ -47,12 +47,19 @@ app.get('/test', (req: Request, res: Response, next: NextFunction) => {
    // test();
 
     //this test checks to see if api data is coerced into Property Type
+    
+
     const test1 = async () => {
         console.log('running test1');
         const info = await test_prep_data();
-        res.json(info);
+        const add2db = await test_add_db();
+
+        //need to un comment once finished 
+        //res.json(info);
     }
     test1();
+
+
 
 
 
