@@ -11,6 +11,6 @@ router.get('/api/forsale', apiController.getForSaleProperty)
 
 router.get('/api/property/:id', apiController.getSingleProperty)
 
-
+router.get('/api/test_file', apiController.createFile)
 
 export default router;

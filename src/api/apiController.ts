@@ -58,4 +58,14 @@ export const getTotalProperty = (req: Request, res: Response) => {
 }
 
 
+// this is for testing purposes, code will probably have to change for digital ocean volume
+var fs = require('fs');
+export const createFile = (req: Request, res: Response) => {
+
+};
+
+
+
+
+
 

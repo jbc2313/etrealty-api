@@ -7,6 +7,8 @@ import { cronJob } from './utils/nodeCron';
 
 import { test_prep_data } from './__tests__/test_prep_data';
 import { test_add_db } from './__tests__/test_add_db';
+import { test_upload_s3 } from './__tests__/test_upload_s3';
+import { test_read_s3 } from './__tests__/test_read_s3';
 //import { test_feed_one_property } from './__tests__/test_feed_one_property';
 
 //-----------endtesting-----------------
@@ -34,7 +36,7 @@ app.get('/test', (req: Request, res: Response, next: NextFunction) => {
 
     //this test checks to see if api data is coerced into Property Type
     
-
+/*
     const test1 = async () => {
         console.log('running test1');
         const info = await test_prep_data();
@@ -49,6 +51,27 @@ app.get('/test', (req: Request, res: Response, next: NextFunction) => {
 
     }
     test1();
+*/
+//test s3 upload
+
+
+const test2 = async () => {
+    console.log('testing s3 upload');
+    test_upload_s3("testfile", "../../testfiles/test.txt");
+};
+test2();
+
+
+
+//test s3 get/read image and file, switch in test
+/*    
+const test3 = async () => {
+    console.log('reading from s3');
+    let html = await test_read_s3();
+    res.send(html);
+}
+test3();
+*/
 
 });
 //================end test routes=========================
