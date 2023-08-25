@@ -57,7 +57,8 @@ app.get('/test', (req: Request, res: Response, next: NextFunction) => {
 
 const test2 = async () => {
     console.log('testing s3 upload');
-    test_upload_s3("testfile", "../../testfiles/test.txt");
+    let result = await test_upload_s3("testfile", "../../testfiles/test.txt");
+    res.send(result);
 };
 test2();
 
