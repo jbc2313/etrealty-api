@@ -5,6 +5,7 @@ import { s3Client } from './s3client';
 const dotenv = require('dotenv');
 dotenv.config()
 
+// on successful get, returns base64 encoded file, ready to be displayed in html img tag
 export async function getS3ImageObject(key: string) : Promise<string | undefined> {
   const bucketname = process.env.AWS_BUCKET;
   const streamToString = (stream : NodeJS.ReadableStream | ReadableStream | Blob) =>

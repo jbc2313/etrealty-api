@@ -11,6 +11,9 @@ import { test_upload_s3 } from './__tests__/test_upload_s3';
 import { test_read_s3 } from './__tests__/test_read_s3';
 //import { test_feed_one_property } from './__tests__/test_feed_one_property';
 
+//test fetch direct from api
+import { runTest } from './__tests__/testFetch';
+
 //-----------endtesting-----------------
 
 import apiRoutes from './api/apiRoutes'
@@ -34,6 +37,14 @@ app.get('/', (req: Request, res: Response, next: NextFunction) => {
 
 app.get('/test', (req: Request, res: Response, next: NextFunction) => {
 
+const test0 = async () => {
+    console.log('fetch from api...');
+    const apiData = await runTest();
+    res.json(apiData);
+};
+test0();
+
+
     //this test checks to see if api data is coerced into Property Type
     
 /*
@@ -52,17 +63,18 @@ app.get('/test', (req: Request, res: Response, next: NextFunction) => {
     }
     test1();
 */
+
+
 //test s3 upload
 
-
+/*
 const test2 = async () => {
     console.log('testing s3 upload');
     let result = await test_upload_s3("testfile", "../../testfiles/testupload.txt");
     res.send(result);
 };
 test2();
-
-
+*/
 
 //test s3 get/read image and file, switch in test
 /*    

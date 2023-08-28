@@ -8,6 +8,9 @@ const dotenv = require('dotenv');
 dotenv.config()
 
 
+
+// on successful upload result.Location is the URL to the file
+
 export async function createObject(key: string, file: string ) {
     //file and key are passed into function
 

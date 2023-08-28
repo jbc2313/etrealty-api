@@ -661,7 +661,7 @@ export async function coerceProperty(data: any) {
         } else {
             temp.ParcelNumber = "no info";
         }
-
+        
         if(apiData[z].PhotosChangeTimestamp){
             temp.PhotosChangeTimestamp = apiData[z].PhotosChangeTimestamp;
         } else {

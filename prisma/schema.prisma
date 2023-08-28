@@ -130,6 +130,7 @@ model DProperty {
     ModificationTimestamp String?
     OriginatingSystemName String?
     ParcelNumber String?
+    Media Json?
     PhotosChangeTimestamp String?
     PhotosCount Int?
     PostalCode String?

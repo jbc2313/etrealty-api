@@ -106,6 +106,7 @@ export type Property = {
     ModificationTimestamp: string
     OriginatingSystemName: string
     ParcelNumber: string
+    Media: string //JSON in Prisma
     PhotosChangeTimestamp: string
     PhotosCount: number
     PostalCode: string

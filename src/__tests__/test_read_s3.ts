@@ -3,6 +3,8 @@ import { getS3ImageObject } from '../utils/getS3ImageObject';
 export async function test_read_s3() {
     // for files
     //let content = await getS3Object("Jackhammer_2.gif");
+    
+
     //for images
     let base64data = await getS3ImageObject("Jackhammer_2.gif");
     
