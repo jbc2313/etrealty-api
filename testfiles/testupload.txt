@@ -1,0 +1,3 @@
+#LIST OF BEST EDITORS
+NeoVim > Vim > Emacs > Vi > Sublime > Jetbrains > Visual Studio > Visual Studio Code
+CHANGE MY MIND.
