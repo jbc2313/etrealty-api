@@ -9,6 +9,7 @@ import { test_prep_data } from './__tests__/test_prep_data';
 import { test_add_db } from './__tests__/test_add_db';
 import { test_upload_s3 } from './__tests__/test_upload_s3';
 import { test_read_s3 } from './__tests__/test_read_s3';
+import { testConvert } from './__tests__/test_save_mlsimg';
 //import { test_feed_one_property } from './__tests__/test_feed_one_property';
 
 //test fetch direct from api
@@ -37,13 +38,15 @@ app.get('/', (req: Request, res: Response, next: NextFunction) => {
 
 app.get('/test', (req: Request, res: Response, next: NextFunction) => {
 
+// test to get direct api data before coericon
+/*
 const test0 = async () => {
     console.log('fetch from api...');
     const apiData = await runTest();
     res.json(apiData);
 };
 test0();
-
+*/
 
     //this test checks to see if api data is coerced into Property Type
     
@@ -63,6 +66,14 @@ test0();
     }
     test1();
 */
+
+// test mls img download to tmp file
+const testimgdload = async () => {
+    const result = await testConvert();
+    res.json(result);
+};
+testimgdload();
+
 
 
 //test s3 upload

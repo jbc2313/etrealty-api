@@ -722,6 +722,15 @@ export async function coerceProperty(data: any) {
             temp.SubAgencyCompensation = "no info";
         }
 
+        // save mls img to s3 
+        let s3imagearray: string[];
+
+        // this is temp while testing
+        s3imagearray = ["hi", "world"];
+        
+        //s3imagearray = await s3convert function
+
+
         // creating actual property object to push in array and then be saved in Prisma
 
         let property: Property = { 
@@ -832,6 +841,7 @@ export async function coerceProperty(data: any) {
             ModificationTimestamp: temp.ModificationTimestamp as string,
             OriginatingSystemName: temp.OriginatingSystemName as string,
             ParcelNumber: temp.ParcelNumber as string,
+            Media: JSON.stringify(s3imagearray) as string,
             PhotosChangeTimestamp: temp.PhotosChangeTimestamp as string,
             PhotosCount: temp.PhotosCount as number,
             PostalCode: temp.PostalCode as string,
