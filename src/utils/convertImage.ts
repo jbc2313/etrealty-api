@@ -7,7 +7,7 @@ import axios from 'axios';
 import path from 'path';
 
 // TODO
-// create a function to download the image from mls to temp file.
+// create a function to download the image from mls to temp file. - DONE, need to handle error so junk isnt uploaded to S3
 // then upload the file to s3 and return the link
 // put the s3 link in the Media key of the property.
 // the MEdia key is json so we can save a string array of multiple image urls
@@ -39,8 +39,8 @@ async function tmpImg(url: string, mlsid: string, file_path: string) {
     const res = await writeFile(path.resolve(__dirname, file_path) + mlsid + "uniquename.jpg", fileResponse.data)
    
     if (res == undefined){
-        let msg = `the file: ${path.resolve(__dirname, file_path)+mlsid+"uniquename.jpg"} uploaded successfully`;
-        console.log(msg);
+        let msg = path.resolve(__dirname, file_path)+mlsid+"uniquename.jpg";
+        console.log(`${msg} was temporarily saved.`);
         return msg;
     };
 
