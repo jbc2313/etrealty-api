@@ -15,6 +15,8 @@ export async function createObject(key: string, file: string ) {
     //file and key are passed into function
 
     const bucket = process.env.AWS_BUCKET;
+    // might not need to path.resolve the filepath, since path is absolute..
+    // needs tested
     const fileContent = createReadStream(path.resolve(__dirname, file));
     const passThroughStream = new stream.PassThrough();
     

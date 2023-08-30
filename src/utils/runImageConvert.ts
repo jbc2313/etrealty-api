@@ -19,7 +19,7 @@ export async function runImageConvert(propArray: Property[]) {
         //testing
         //console.log(filepathArray);
         propArray[x].Media = JSON.stringify(filepathArray);
-        console.log(propArray[x].Media);
+        //console.log(propArray[x].Media);
     };
 
     return propArray;

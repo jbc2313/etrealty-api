@@ -10,6 +10,7 @@ import { test_add_db } from './__tests__/test_add_db';
 import { test_upload_s3 } from './__tests__/test_upload_s3';
 import { test_read_s3 } from './__tests__/test_read_s3';
 import { testConvert } from './__tests__/test_save_mlsimg';
+import { testinitialDBfeed } from './__tests__/test_initialDBfeed';
 //import { test_feed_one_property } from './__tests__/test_feed_one_property';
 
 //test fetch direct from api
@@ -49,7 +50,7 @@ test0();
 */
     
 
-
+/*
     //this test checks to see if api data is coerced into Property Type
     const test1 = async () => {
         console.log('running test1');
@@ -65,7 +66,14 @@ test0();
         //res.json(addtodb);
     }
     test1();
+*/
 
+async function testInitFeed(){
+    console.log('running test init feed');
+    let data = await testinitialDBfeed();
+    res.json(data);
+};
+testInitFeed();
 
 /*
 // test mls img download to tmp file
