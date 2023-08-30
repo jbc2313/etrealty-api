@@ -1,4 +1,4 @@
-import { createObject } from "../utils/putS3Object";
+import { createObject } from "../s3utils/putS3Object";
 
 export async function test_upload_s3(key: string, filepath: string) {
 

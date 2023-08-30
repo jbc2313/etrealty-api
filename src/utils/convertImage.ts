@@ -1,4 +1,3 @@
-import { createObject } from './putS3Object';
 import { writeFile, mkdir } from 'node:fs/promises';
 //const fsPromises = fs.promises;
 //

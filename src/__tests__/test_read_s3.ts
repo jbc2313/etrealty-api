@@ -1,5 +1,5 @@
 //import { getS3Object } from '../utils/getS3Object';
-import { getS3ImageObject } from '../utils/getS3ImageObject';
+import { getS3ImageObject } from '../s3utils/getS3ImageObject';
 export async function test_read_s3() {
     // for files
     //let content = await getS3Object("Jackhammer_2.gif");

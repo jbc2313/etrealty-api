@@ -30,7 +30,9 @@ export const feed = async (PropertyArray: Property[]) => {
    
 // NEW CODE -----------------------------------------------------------------------------------
     
-    
+// this is after initial db feed, ran on a cron job, initial feed is going to be ran differently, with me watching.
+
+
     // see if props are already in Db, and handle accordingly
     PropertyArray.forEach((prop: Property)=> {
     // if property is found check check timestamp to see if it needs updated(compare to new info from api)

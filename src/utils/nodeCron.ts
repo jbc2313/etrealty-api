@@ -3,7 +3,7 @@ const cron = require('node-cron');
 // const dotenv = require('dotenv');
 // dotenv.config()
 // const cronitor = require('cronitor')(process.env.CRONITOR_KEY)
-import mainCronJob from './feedandupdate';
+import mainCronJob from './old-feedandupdate';
 
 // THIS has not been updated for MLS GRID
 

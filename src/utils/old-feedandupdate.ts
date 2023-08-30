@@ -21,7 +21,7 @@ import { prepApiData } from './prepareData';
 
 const dotenv = require('dotenv');
 dotenv.config()
-//const cronitor = require('cronitor')(process.env.CRONITOR_KEY)
+const cronitor = require('cronitor')(process.env.CRONITOR_KEY)
 
 let mainCronJob = cronitor.wrap('etRealty-dbupdate', async function() {
 
@@ -29,12 +29,12 @@ let mainCronJob = cronitor.wrap('etRealty-dbupdate', async function() {
 
 
     // need to update feed function to accept Property[] type
-    feed(properties).then(resolved => {
+    //feed(properties).then(resolved => {
         // dont think this is neccassarry anymore
        // checkSold(properties);
-    }).finally(()=>{
+    //}).finally(()=>{
         
     })
-});
+//});
 
 export default mainCronJob;
