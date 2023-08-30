@@ -47,33 +47,34 @@ const test0 = async () => {
 };
 test0();
 */
+    
+
 
     //this test checks to see if api data is coerced into Property Type
-    
-/*
     const test1 = async () => {
         console.log('running test1');
         const info = await test_prep_data();
-        //res.json(info);
+        res.json(info);
 
         // this is to add one property and create the db
         // const addonetodb = await test_feed_one_property(info);
         //res.json(addonetodb);
 
-        const addtodb = await test_add_db(info);
-        res.json(addtodb);
-
+        // adds whole array to db
+        //const addtodb = await test_add_db(info);
+        //res.json(addtodb);
     }
     test1();
-*/
 
+
+/*
 // test mls img download to tmp file
 const testimgdload = async () => {
     const result = await testConvert();
     res.json(result);
 };
 testimgdload();
-
+*/
 
 
 //test s3 upload

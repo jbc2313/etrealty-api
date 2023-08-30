@@ -16,12 +16,6 @@ export async function coerceProperty(data: any) {
     let temp: Partial<Property> = {};
     
     
-
-
-
-
-
-
     for(let z = 0; z < size; z++) {
         temp.ListingId = apiData[z].ListingId; 
 
@@ -662,6 +656,12 @@ export async function coerceProperty(data: any) {
             temp.ParcelNumber = "no info";
         }
         
+        if(apiData[z].Media){
+            temp.Media = JSON.stringify(apiData[z].Media);
+        }else{
+            temp.Media = "no info";
+        }
+
         if(apiData[z].PhotosChangeTimestamp){
             temp.PhotosChangeTimestamp = apiData[z].PhotosChangeTimestamp;
         } else {
@@ -722,83 +722,81 @@ export async function coerceProperty(data: any) {
             temp.SubAgencyCompensation = "no info";
         }
 
-        // save mls img to s3 
-        let s3imagearray: string[];
-
-        // this is temp while testing
-        s3imagearray = ["hi", "world"];
+        //make sure and test for mlsimgtmpfilepathsarray[x] to be "MLS IMG URL IS BROKEN, MOVING ON"
+        //if it is dont upload to s3
         
-        //s3imagearray = await s3convert function
-
+        // mlsimgtmpfilepathsarray.forEach((filepath: string)=>{
+        //      puts3Object(filepath)
+        // })
 
         // creating actual property object to push in array and then be saved in Prisma
 
         let property: Property = { 
             ListingId: temp.ListingId as string,
-            Utilities: temp.Utilities,
+            Utilities: temp.Utilities as string,
             HMS_SaleOptions: temp.HMS_SaleOptions as string,
-            PossibleUse: temp.PossibleUse,
-            GreenEnergyEfficient: temp.GreenEnergyEfficient,
+            PossibleUse: temp.PossibleUse as string,
+            GreenEnergyEfficient: temp.GreenEnergyEfficient as string,
             LotSizeDimensions: temp.LotSizeDimensions as string,
             Zoning: temp.Zoning as string,
-            RoadSurfaceType: temp.RoadSurfaceType,
-            VirtualTourURLUnbranded: temp.VirtualTourURLUnbranded,
-            WindowFeatures: temp.WindowFeatures,
+            RoadSurfaceType: temp.RoadSurfaceType as string,
+            VirtualTourURLUnbranded: temp.VirtualTourURLUnbranded as string,
+            WindowFeatures: temp.WindowFeatures as string,
             HMS_Telecom: temp.HMS_Telecom as string,
-            SecurityFeatures: temp.SecurityFeatures,
-            AssociationFeeIncludes: temp.AssociationFeeIncludes,
+            SecurityFeatures: temp.SecurityFeatures as string,
+            AssociationFeeIncludes: temp.AssociationFeeIncludes as string,
             HMS_InsideCityLimits: temp.HMS_InsideCityLimits as string,
             OwnershipType: temp.OwnershipType as string,
-            Appliances: temp.Appliances,
-            RoadResponsibility: temp.RoadResponsibility,
+            Appliances: temp.Appliances as string,
+            RoadResponsibility: temp.RoadResponsibility as string,
             BuilderModel: temp.BuilderModel as string,
-            AssociationAmenities: temp.AssociationAmenities,
+            AssociationAmenities: temp.AssociationAmenities as string,
             CoListAgentFullName: temp.CoListAgentFullName as string,
             CoListAgentMlsId: temp.CoListAgentMlsId as string,
             CoListOfficeName: temp.CoListOfficeName as string,
             CoListOfficePhone: temp.CoListOfficePhone as string,
             YearBuilt: temp.YearBuilt as number,
-            Flooring: temp.Flooring,
-            Possession: temp.Possession,
+            Flooring: temp.Flooring as string,
+            Possession: temp.Possession as string,
             AssociationFeeFrequency: temp.AssociationFeeFrequency as string,
             HMS_WarrantyDescription: temp.HMS_WarrantyDescription as string,
-            InteriorFeatures: temp.InteriorFeatures,
-            PatioAndPorchFeatures: temp.PatioAndPorchFeatures,
+            InteriorFeatures: temp.InteriorFeatures as string,
+            PatioAndPorchFeatures: temp.PatioAndPorchFeatures as string,
             RoomsTotal: temp.RoomsTotal as number,
             HighSchool: temp.HighSchool as string,
             MiddleOrJuniorSchool: temp.MiddleOrJuniorSchool as string,
-            ArchitecturalStyle: temp.ArchitecturalStyle,
+            ArchitecturalStyle: temp.ArchitecturalStyle as string,
             BuilderName: temp.BuilderName as string,
             ElementarySchool: temp.ElementarySchool as string,
-            FireplaceFeatures: temp.FireplaceFeatures,
-            LaundryFeatures: temp.LaundryFeatures,
-            LotFeatures: temp.LotFeatures,
-            PropertyCondition: temp.PropertyCondition,
+            FireplaceFeatures: temp.FireplaceFeatures as string,
+            LaundryFeatures: temp.LaundryFeatures as string,
+            LotFeatures: temp.LotFeatures as string,
+            PropertyCondition: temp.PropertyCondition as string,
             FireplacesTotal: temp.FireplacesTotal as number,
             AboveGradeFinishedArea: temp.AboveGradeFinishedArea as number,
             AboveGradeFinishedAreaUnits: temp.AboveGradeFinishedAreaUnits as string,
             BelowGradeFinishedArea: temp.BelowGradeFinishedArea as number,
             BelowGradeFinishedAreaUnits: temp.BelowGradeFinishedAreaUnits as string,
             GarageSpaces: temp.GarageSpaces as number,
-            Basement: temp.Basement,
+            Basement: temp.Basement as string,
             BasementYN: temp.BasementYN as boolean,
             BathroomsFull: temp.BathroomsFull as number,
             BathroomsHalf: temp.BathroomsHalf as number,
             BedroomsTotal: temp.BedroomsTotal as number,
-            Cooling: temp.Cooling,
+            Cooling: temp.Cooling as string,
             CoolingYN: temp.CoolingYN as boolean,
             FireplaceYN: temp.FireplaceYN as boolean,
             GarageYN: temp.GarageYN as boolean,
             HMS_BathroomsTotalDecimal: temp.HMS_BathroomsTotalDecimal as string,
             HMS_ExclusionsYN: temp.HMS_ExclusionsYN as string,
             HMS_FloorPlanFeatures: temp.HMS_FloorPlanFeatures as string,
-            Heating: temp.Heating,
+            Heating: temp.Heating as string,
             LivingArea: temp.LivingArea as number,
             Ownership: temp.Ownership as string,
-            Roof: temp.Roof,
+            Roof: temp.Roof as string,
             LotSizeArea: temp.LotSizeArea as number,
             LotSizeSquareFeet: temp.LotSizeSquareFeet as number,
-            ParkingFeatures: temp.ParkingFeatures,
+            ParkingFeatures: temp.ParkingFeatures as string,
             LotSizeUnits: temp.LotSizeUnits as string,
             HMS_AgeDescription: temp.HMS_AgeDescription as string,
             AssociationFee: temp.AssociationFee as number,
@@ -833,15 +831,15 @@ export async function coerceProperty(data: any) {
             ListingAgreement: temp.ListingAgreement as string,
             ListingContractDate: temp.ListingContractDate as string,
             ListingKey: temp.ListingKey as string,
-            ListingTerms: temp.ListingTerms,
+            ListingTerms: temp.ListingTerms as string,
             MLSAreaMajor: temp.MLSAreaMajor as string,
-            MlgCanUse: temp.MlgCanUse,
+            MlgCanUse: temp.MlgCanUse as string,
             MlgCanView: temp.MlgCanView as boolean,
             MlsStatus: temp.MlsStatus as string,
             ModificationTimestamp: temp.ModificationTimestamp as string,
             OriginatingSystemName: temp.OriginatingSystemName as string,
             ParcelNumber: temp.ParcelNumber as string,
-            Media: JSON.stringify(s3imagearray) as string,
+            Media: temp.Media as string,
             PhotosChangeTimestamp: temp.PhotosChangeTimestamp as string,
             PhotosCount: temp.PhotosCount as number,
             PostalCode: temp.PostalCode as string,
@@ -850,12 +848,12 @@ export async function coerceProperty(data: any) {
             StandardStatus: temp.StandardStatus as string,
             StateOrProvince: temp.StateOrProvince as string,
             StreetName: temp.StreetName as string,
-            StreetSuffix: temp.StreetSuffix as string ,
-            SubAgencyCompensation: temp.SubAgencyCompensation as string
- 
-        }
+            StreetSuffix: temp.StreetSuffix as string,
+            SubAgencyCompensation: temp.SubAgencyCompensation as string 
+        } 
 
         propertyArray.push(property)
+
     }
 
 

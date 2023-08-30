@@ -6,11 +6,6 @@ import axios from 'axios';
 
 import path from 'path';
 
-// TODO
-// create a function to download the image from mls to temp file. - DONE, need to handle error so junk isnt uploaded to S3
-// then upload the file to s3 and return the link
-// put the s3 link in the Media key of the property.
-// the MEdia key is json so we can save a string array of multiple image urls
 
 const folderpath = "../../imgfolder/";
 
@@ -55,7 +50,7 @@ async function tmpImg(url: string, mlsid: string, arrayidx:string, file_path: st
             method: 'GET',
             responseType: 'arraybuffer',
         }).catch(function (error) {
-            console.log(error.toJSON());
+//            console.log(error.toJSON());
             return error.toJSON();
         });
 
