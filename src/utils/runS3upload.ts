@@ -19,7 +19,9 @@ export async function runS3upload(PropertyArray: Property[]) {
         PropertyArray[x].Media = JSON.stringify(updatedMediaArray);
     };
     
-    
+    // TO DO 
+    //need to add cleanup imgfolder here
+    // so imgfolder doesnt get out of hand
 
     return PropertyArray;
 };

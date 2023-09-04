@@ -7,6 +7,7 @@ import { coerceProperty } from './coercePropertyType';
 
 export async function prepApiData() {
     let apiData = await getPropertys();
-    let propertyArray: Property[] = await coerceProperty(apiData);
-    return propertyArray;
+    // propertyInfo is an Object in the shape {propertyArray,nextLink,};
+    let propertyInfo = await coerceProperty(apiData);
+    return propertyInfo;
 }

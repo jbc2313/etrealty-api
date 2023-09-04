@@ -1,13 +1,16 @@
 import { Property } from './property-type';
 
+
+
+
 export async function coerceProperty(data: any) {
     let propertyArray: any = [];
     
-
-
     let apiData = data.data.value;
     // use to check data fro mlsgrid
     //console.log(apiData);
+    
+    let nextLink = data.data[2];
  
     let size = apiData.length;
     //console.log(`Size of apiData = ${size}`);
@@ -857,7 +860,10 @@ export async function coerceProperty(data: any) {
     }
 
 
-    return propertyArray;
+    return {
+        propertyArray,
+        nextLink,
+    };
 
 }
 

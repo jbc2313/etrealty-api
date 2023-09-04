@@ -40,14 +40,12 @@ app.get('/', (req: Request, res: Response, next: NextFunction) => {
 app.get('/test', (req: Request, res: Response, next: NextFunction) => {
 
 // test to get direct api data before coericon
-/*
 const test0 = async () => {
     console.log('fetch from api...');
     const apiData = await runTest();
     res.json(apiData);
 };
 test0();
-*/
     
 
 /*
@@ -68,12 +66,14 @@ test0();
     test1();
 */
 
+/*
 async function testInitFeed(){
     console.log('running test init feed');
     let data = await testinitialDBfeed();
     res.json(data);
 };
 testInitFeed();
+*/
 
 /*
 // test mls img download to tmp file
