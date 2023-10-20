@@ -25,7 +25,7 @@ const cronitor = require('cronitor')(process.env.CRONITOR_KEY)
 
 let mainCronJob = cronitor.wrap('etRealty-dbupdate', async function() {
 
-    let propertyArray: Property[] = await prepApiData();
+    //let propertyArray: Property[] = await prepApiData();
 
 
     // need to update feed function to accept Property[] type

@@ -2,9 +2,12 @@ import { Property } from '../utils//property-type';
 import { prepApiData } from '../utils/prepareData';
 
 export async function test_prep_data () {
-    let propertyArray: Property[] = await prepApiData();
+    let propertyInfo = await prepApiData();
     
+    //let propertyArray: Property[] = propertyInfo.propertyArray;
 
-    return propertyArray;
+    //return propertyArray;
+
+    return propertyInfo
 
 }

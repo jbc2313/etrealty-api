@@ -12,7 +12,7 @@ const folderpath = "../../imgfolder/";
 // https://www.google.com/imgres?imgurl=https%3a%2f%2fupload.wikimedia.org%2fwikipedia%2fcommons%2fthumb%2f4%2f4f%2fneovim-logo.svg%2f2560px-neovim-logo.svg.png&tbnid=6umabjwefiu7om&vet=12ahukewjxyf-41_-aaxx-o94ahc3razsqmyg_eguiarcfag..i&imgrefurl=https%3a%2f%2fcommons.wikimedia.org%2fwiki%2ffile%3aneovim-logo.svg&docid=mons9hlxixiolm&w=2560&h=738&q=neovim&hl=en&ved=2ahukewjxyf-41_-aaxx-o94ahc3razsqmyg_eguiarcfag
 
 // working url
-const tmpurl = "https://www.publicdomainpictures.net/pictures/500000/velka/vintage-kunst-musik-katzen.jpg"
+//const tmpurl = "https://www.publicdomainpictures.net/pictures/500000/velka/vintage-kunst-musik-katzen.jpg"
 
 // borked url for testing broken link
 //const tmpurl = "https://www.publicdopictures.net/pictures/500000/velka/vintage-kunst-musik-katzen.jpg"
@@ -72,6 +72,7 @@ async function tmpImg(url: string, mlsid: string, arrayidx:string, file_path: st
 };
 
 // could be implemented with fetch if node and fetch fucking working properly with typscript
+// July 2023
     /*
     // @ts-ignore
     .then((res)=> res.arrayBuffer())

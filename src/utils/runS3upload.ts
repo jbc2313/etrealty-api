@@ -7,21 +7,24 @@ export async function runS3upload(PropertyArray: Property[]) {
     const size = PropertyArray.length;
     for(let x = 0;x < size; x++){
         const updatedMediaArray = [];
-        let filepatharray = JSON.parse(PropertyArray[x].Media);
-        let filepatharraysize = filepatharray.length;
-        for(let z = 0;z < filepatharraysize; z++){
-            let filename = PropertyArray[x].ListingId + "-" + z.toString() + ".jpg";
-            let result: any = await createObject(filename, filepatharray[z]); 
-            updatedMediaArray.push(result.Location); 
-            
-            
-        };
-        PropertyArray[x].Media = JSON.stringify(updatedMediaArray);
+        let filepatharray = null;
+        try {
+            filepatharray = JSON.parse(PropertyArray[x].Media);
+            let filepatharraysize = filepatharray.length;
+            for(let z = 0;z < filepatharraysize; z++){
+                let filename = PropertyArray[x].ListingId + "-" + z.toString() + ".jpg";
+                let result: any = await createObject(filename, filepatharray[z]); 
+                updatedMediaArray.push(result.Location); 
+
+
+            };
+            PropertyArray[x].Media = JSON.stringify(updatedMediaArray);
+
+        } catch(e) {
+            console.log('upload skipped')
+        }
     };
     
-    // TO DO 
-    //need to add cleanup imgfolder here
-    // so imgfolder doesnt get out of hand
 
     return PropertyArray;
 };

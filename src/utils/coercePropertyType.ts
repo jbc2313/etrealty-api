@@ -10,7 +10,9 @@ export async function coerceProperty(data: any) {
     // use to check data fro mlsgrid
     //console.log(apiData);
     
-    let nextLink = data.data[2];
+    let nextLink = data.data['@odata.nextLink'];
+    console.log('supposed to be nextlink');
+    console.log(nextLink);
  
     let size = apiData.length;
     //console.log(`Size of apiData = ${size}`);

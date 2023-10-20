@@ -7,19 +7,24 @@ export async function runImageConvert(propArray: Property[]) {
     const size = propArray.length;
 
     for(let x = 0; x<size; x++){
-        let preMediaArray = JSON.parse(propArray[x].Media);
-        const preMediaArraySize = preMediaArray.length;
-        let filepathArray = [];
-        for(let z = 0; z<preMediaArraySize; z++){
-            if(z<10){
-                let filepath = await convertImage(preMediaArray[z].MediaURL, propArray[x].ListingId, z);
-                filepathArray.push(filepath); 
+        let preMediaArray = null;
+        try {
+           preMediaArray=JSON.parse(propArray[x].Media);
+            const preMediaArraySize = preMediaArray.length;
+            let filepathArray = [];
+            for(let z = 0; z<preMediaArraySize; z++){
+                if(z<10){
+                    let filepath = await convertImage(preMediaArray[z].MediaURL, propArray[x].ListingId, z);
+                    filepathArray.push(filepath); 
+                };
             };
-        };
-        //testing
-        //console.log(filepathArray);
-        propArray[x].Media = JSON.stringify(filepathArray);
-        //console.log(propArray[x].Media);
+            //testing
+            //console.log(filepathArray);
+            propArray[x].Media = JSON.stringify(filepathArray);
+            //console.log(propArray[x].Media);
+        } catch (e) {
+            console.log('unable to upload');
+        }
     };
 
     return propArray;

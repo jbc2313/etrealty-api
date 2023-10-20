@@ -21,7 +21,7 @@ export const getNextPropertys = async (nextUrl: string) => {
         method: 'GET',
         url: nextUrl,
         headers: {
-          'Authorization': process.env.MLSGRID_TEST_TOKEN,
+          'Authorization': process.env.MLSGRID_LIVE_TOKEN,
         }
     };
 

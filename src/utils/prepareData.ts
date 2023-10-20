@@ -1,7 +1,7 @@
 
 import { Property } from './property-type';
 
-import { getPropertys } from "../utils/fetchPropertys";
+import { getPropertys } from "./fetchPropertys";
 import { coerceProperty } from './coercePropertyType';
 
 

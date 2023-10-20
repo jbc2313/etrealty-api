@@ -11,6 +11,8 @@ import { test_upload_s3 } from './__tests__/test_upload_s3';
 import { test_read_s3 } from './__tests__/test_read_s3';
 import { testConvert } from './__tests__/test_save_mlsimg';
 import { testinitialDBfeed } from './__tests__/test_initialDBfeed';
+import { removeDir } from './__tests__/test_removedir';
+import { startFeeding } from  './__tests__/test_startfeed';
 //import { test_feed_one_property } from './__tests__/test_feed_one_property';
 
 //test fetch direct from api
@@ -33,20 +35,30 @@ app.use(apiRoutes)
 //cronJob();
 
 //===============================test routes================================================
-app.get('/', (req: Request, res: Response, next: NextFunction) => {
+app.get('/', (req: Request, res: Response) => {
     res.json({ message: "Express with TypeScript! EtRealty API"})
 });
 
-app.get('/test', (req: Request, res: Response, next: NextFunction) => {
+app.get('/test', (req: Request, res: Response) => {
 
 // test to get direct api data before coericon
+/*
 const test0 = async () => {
     console.log('fetch from api...');
     const apiData = await runTest();
     res.json(apiData);
 };
 test0();
-    
+*/
+
+
+// MANUAL feed
+const manualFeed = async () => {
+    console.log("starting manual init feed");
+    const result = await startFeeding();
+    res.json(result);
+};
+manualFeed();
 
 /*
     //this test checks to see if api data is coerced into Property Type
@@ -65,6 +77,19 @@ test0();
     }
     test1();
 */
+
+
+/*
+//test remove dir
+const removeImageFolder = async () => {
+    console.log('removing img folder');
+    const result = await removeDir();
+    res.json(result);
+}
+removeImageFolder();
+
+*/
+
 
 /*
 async function testInitFeed(){
